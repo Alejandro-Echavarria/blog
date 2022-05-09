@@ -11,7 +11,7 @@
                         </h1>
                         <div class="pt-2">
                             @foreach ($post->tags as $tag)
-                                <a href="" class="inline-block px-6 h-6 bg-{{$tag->color}}-500 text-white rounded-full font-bold">{{ $tag->name }}</a>
+                                <a href="{{route('posts.tag', $tag)}}" class="inline-block px-3 py-1 bg-{{$tag->color}}-200 text-gray-700 text-sm rounded-full font-bold">{{ $tag->name }}</a>
                             @endforeach
                         </div>
                     </div>
@@ -19,7 +19,7 @@
             @endforeach
         </div>
         {{-- Pagination --}}
-        <div class="sm:px-4 mt-4">
+        <div class="sm:px-4 mt-8">
             {{$posts->links()}}
         </div>
     </div>

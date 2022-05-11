@@ -3,11 +3,11 @@
 @section('title', 'Smaet')
 
 @section('content_header')
-    <h1 class="font-weight-bold text-gray-dark">Dashboard</h1>
+    <h1 class="font-weight-bold text-gray-dark">Lista de posts</h1>
 @stop
 
 @section('content')
-    <p></p>
+    @livewire('admin.post-index')
 @stop
 
 {{-- @section('css')

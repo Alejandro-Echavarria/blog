@@ -3,7 +3,7 @@
 @section('title', 'Smaet')
 
 @section('content_header')
-    <h1 class="font-weight-bold text-gray-dark">Lista de categorías</h1>
+    <h1 class="font-weight-bold text-gray-dark">Lista de etiquetas</h1>
 @stop
 
 @section('content')
@@ -27,7 +27,7 @@
                     </select>
                 </div>
                 <div>
-                    <a href="{{route('admin.categories.create')}}" class="btn btn-primary">
+                    <a href="{{route('admin.tags.create')}}" class="btn btn-primary">
                         <i class="fas fa-plus"></i> <span class="hidden-letters"> Agregar</span>
                     </a>
                 </div>
@@ -38,19 +38,19 @@
                 <thead>
                     <tr>
                         <th style="width: 10%">ID</th>
-                        <th style="width: 70%">Name</th>
+                        <th style="width: 70%">Nombre</th>
                         <th style="width: 20%">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($categories as $category)
+                    @foreach ($tags as $tag)
                         <tr class="px-2">
-                            <td>{{$category->id}}</td>
-                            <td>{{$category->name}}</td>
+                            <td>{{$tag->id}}</td>
+                            <td>{{$tag->name}}</td>
                             <td>
                                 <div class="d-flex">
-                                    <a class="btn btn-sm btn-success mr-1" href="{{route('admin.categories.edit', $category)}}"><i class="fas fa-pen"></i></a>
-                                    <form action="{{route('admin.categories.destroy', $category)}}" method="POST">
+                                    <a class="btn btn-sm btn-success mr-1" href="{{route('admin.tags.edit', $tag)}}"><i class="fas fa-pen"></i></a>
+                                    <form action="{{route('admin.tags.destroy', $tag)}}" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-sm btn-danger" type="submit"><i class="fas fa-trash"></i></button>
@@ -76,3 +76,7 @@
 @section('css')
     <link rel="stylesheet" href="{{asset('css/my-style.css')}}">
 @stop
+
+{{-- @section('js')
+    <script> console.log('Hi!'); </script>
+@stop --}}

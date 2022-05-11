@@ -3,7 +3,7 @@
 @section('title', 'Smaet')
 
 @section('content_header')
-    <h1>Editar Categoría</h1>
+    <h1 class="font-weight-bold text-gray-dark">Editar Categoría</h1>
 @stop
 
 @section('content')
@@ -21,7 +21,7 @@
                     {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre de la categoría']) !!}
 
                     @error('name')
-                        <span class="text-danger">{{$message}}</span>
+                        <small class="text-danger">{{$message}}</small>
                     @enderror
                 </div>
 
@@ -30,7 +30,7 @@
                     {!! Form::text('slug', null, ['class' => 'form-control', 'placeholder' => 'Slug de la categoría', 'readonly']) !!}
 
                     @error('slug')
-                        <span class="text-danger">{{$message}}</span>
+                        <small class="text-danger">{{$message}}</small>
                     @enderror
                 </div>
 

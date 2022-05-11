@@ -1,3 +1,13 @@
 .section-color{
     background-color: #f8fafc;
 }
+
+@media (max-width: 476px){
+    
+    .hidden-letters{display: none;}
+    .navSticky{
+        position: sticky;
+        top: 0;
+        border: 0;
+    }
+}

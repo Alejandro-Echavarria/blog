@@ -5,6 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Category;
+use App\Models\Tag;
+
+// Import of validation file
+use App\Http\Requests\StoreFormRequest;
 
 class PostController extends Controller
 {
@@ -25,7 +30,10 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        $categories = Category::pluck('name', 'id');
+        $tags = Tag::all();
+
+        return view('admin.posts.create', compact('categories', 'tags'));
     }
 
     /**
@@ -34,9 +42,24 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreFormRequest $request)
     {
-        //
+        $data = $request->all();
+        $data['user_id'] = auth()->user()->id;
+
+        $post = Post::create($data);
+
+        // Validamos si existe tags en la petición
+        if ($request->tags) {
+            
+            /* Llamamos a la relaci►2n tags y le pasamos el metodo attach
+                pasandole los tags de la variable o objeto request
+            */
+            $post->tags()->attach($request->tags);
+        }
+
+        // Redireccionamos al post creado
+        return redirect()->route('admin.posts.edit', $post);
     }
 
     /**
@@ -47,7 +70,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('admin.posts.show', compact($post));
+        return view('admin.posts.show', compact('post'));
     }
 
     /**
@@ -58,7 +81,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('admin.posts.edit', compact($post));
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**

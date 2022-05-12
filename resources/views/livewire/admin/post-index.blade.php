@@ -22,7 +22,7 @@
         </div>
         @if ($posts->count())    
             <div class="card-body table-responsive p-0">
-                <table style="width: 100$" class="table table-hover table-sm">
+                <table style="width: 100%;" class="table table-hover table-sm">
                     <thead>
                         <tr>
                             <th style="width: 10%">ID</th>

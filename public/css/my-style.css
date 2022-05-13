@@ -2,6 +2,83 @@
     background-color: #f8fafc;
 }
 
+.img-post{
+    position: relative;
+    padding-bottom: 56.26%;
+}
+
+.img-post img{
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+/* 
+.scrollCustom {
+    /*Estilos estándar experimentales (Principalmente Firefox)
+    scrollbar-color: rgba(0, 0, 0, .5) rgba(0, 0, 0, 0);
+    scrollbar-width: thin;
+} */
+
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+/* .scrollCustom::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.scrollCustom::-webkit-scrollbar:vertical {
+    width:5px;
+}
+
+.scrollCustom::-webkit-scrollbar-button:increment,.scrollCustom::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.scrollCustom::-webkit-scrollbar:horizontal {
+    height: 5px;
+} */
+
+/* .scrollCustom::-webkit-scrollbar-thumb {
+    background-color: #616161;
+    border-radius: 20px;
+    /* border: 2px solid #f1f2f3; 
+}*/
+
+.scrollCustom::-webkit-scrollbar-track {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(156, 156, 156) rgba(255, 166, 0, 0);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: rgba(197, 197, 197, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color:  rgb(156, 156, 156);
+    border-radius: 20px;
+    /* border: 3px solid orange; */
+}
+ 
 @media (max-width: 476px){
     
     .hidden-letters{display: none;}

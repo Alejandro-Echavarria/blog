@@ -9,7 +9,7 @@
 @section('content')
     <div class="card shadow-sm">
         <div class="card-body">
-            {!! Form::open(['route' => 'admin.posts.store']) !!}
+            {!! Form::open(['route' => 'admin.posts.store', 'files' => true]) !!}
 
             <div class="form-group">
                 {!! Form::label('name', 'Nombre') !!}
@@ -74,6 +74,32 @@
                 <hr>
             </div>
 
+            <div class="row my-4">
+                <div class="col-sm-6 mb-3">
+                    <div class="img-post">
+                        <img id="img-post" src="{{asset('img/img-ask.jpg')}}" alt="">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="custom-file">
+
+                        {!! Form::label('file', 'Selecciona imagen del post', ['class' => 'custom-file-label', 'id' => 'fileLabel']) !!}
+                        {!! Form::file('file', ['class' => 'custom-file-input','aria-describedby' => 'file', 'accept' => 'image/*']) !!}
+                    </div>
+
+                    @error('file')
+                        <small class="text-danger">{{$message}}</small>
+                    @enderror
+
+                    <div class="mt-3">
+                        <h6 class="text-gray">Indicaciones</h6>
+                        <ul class="text-gray">
+                            <li>Las imagenes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <div class="form-group">
                 {!! Form::label('extract', 'Extracto') !!}
                 {!! Form::textarea('extract', null, ['class' => 'form-control']) !!}
@@ -106,26 +132,5 @@
 @section('js')
     <script src="{{asset('/vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js')}}"></script>
     <script src="{{asset('/vendor/ckeditor-clasic/ckeditor-clasic.js')}}"></script>
-
-    <script>
-        $(document).ready( function() {
-            $("#name").stringToSlug({
-                setEvents: 'keyup keydown blur',
-                getPut: '#slug',
-                space: '-'
-            });
-        });
-
-        ClassicEditor
-            .create( document.querySelector( '#extract' ) )
-            .catch( error => {
-                console.error( error );
-            } );
-
-        ClassicEditor
-            .create( document.querySelector( '#body' ) )
-            .catch( error => {
-                console.error( error );
-            } );
-        </script>
+    <script src="{{asset('/js/functions-post.js')}}"></script>
 @stop

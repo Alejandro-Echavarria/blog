@@ -3,16 +3,21 @@
         <div class="sm:px-4">
             <h1 class="text-4xl font-bold text-gray-700">{{$post->name}}</h1>
             <div class="text-lg text-gray-400 my-4">
-                {{$post->extract}}
+                {!!$post->extract!!}
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 {{-- Main content --}}
                 <div class="col-span-2">
                     <figure>
-                        <img class="w-full h-80 object-cover object-center rounded-md" src="{{Storage::url($post->image->url)}}" alt="">
+                        @if ($post->image)
+            
+                            <img class="w-full h-72 object-cover object-center rounded-md" src="{{Storage::url($post->image->url)}}" alt="">
+                        @else
+                            <img class="w-full h-72 object-cover object-center rounded-md" src="{{asset('img/img-ask.jpg')}}" alt="">
+                        @endif
                     </figure>
                     <div class="my-6 text-base text-gray-500 font-bold">
-                        {{$post->body}}
+                        {!!$post->body!!}
                     </div>
                 </div>
                 {{-- Related content --}}
@@ -21,8 +26,13 @@
                     <ul>
                         @foreach ($similars as $similar)
                             <li class="mb-4">
-                                <a class="flex" href="{{route('posts.show', $similar)}}">
-                                    <img class="rounded-md w-30 h-20 object-cover object-center" src="{{Storage::url($similar->image->url)}}" alt="">
+                                <a class="flex mt-2" href="{{route('posts.show', $similar)}}">
+                                    @if ($similar->image)
+                                        
+                                        <img class="rounded-md w-30 h-20 object-cover object-center" src="{{Storage::url($similar->image->url)}}" alt="">
+                                    @else
+                                        <img class="rounded-md w-30 h-20 object-cover object-center" src="{{asset('img/img-ask.jpg')}}" alt="">
+                                    @endif
                                     <span class="ml-2 text-gray-700 font-bold">{{$similar->name}}</span>
                                 </a>
                             </li>

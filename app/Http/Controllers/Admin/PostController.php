@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\Tag;
+use Illuminate\Support\Facades\Storage;
 
 // Import of validation file
 use App\Http\Requests\StoreFormRequest;
@@ -44,10 +45,23 @@ class PostController extends Controller
      */
     public function store(StoreFormRequest $request)
     {
+
         $data = $request->all();
         $data['user_id'] = auth()->user()->id;
 
         $post = Post::create($data);
+
+        // Validamos si existe una imagen en la petición
+        if ($request->file('file')) {
+            
+            $url = Storage::put('posts', $request->file('file'));
+
+            // Guardamos el archivo
+                // Llamamos la relacion de post e image
+            $post->image()->create([
+                'url' => $url
+            ]);
+        }
 
         // Validamos si existe tags en la petición
         if ($request->tags) {

@@ -5,7 +5,7 @@
             <div class="text-lg text-gray-400 my-4">
                 {!!$post->extract!!}
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
                 {{-- Main content --}}
                 <div class="col-span-2">
                     <figure>
@@ -28,7 +28,6 @@
                             <li class="mb-4">
                                 <a class="flex mt-2" href="{{route('posts.show', $similar)}}">
                                     @if ($similar->image)
-                                        
                                         <img class="rounded-md w-30 h-20 object-cover object-center" src="{{Storage::url($similar->image->url)}}" alt="">
                                     @else
                                         <img class="rounded-md w-30 h-20 object-cover object-center" src="{{asset('img/img-ask.jpg')}}" alt="">

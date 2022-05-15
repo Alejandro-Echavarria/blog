@@ -40,11 +40,14 @@
 
             <div class="form-group">
                 <p class="font-weight-bold">Etiquetas</p>
-                @foreach ($tags as $tag)     
-                    <label class="mr-2 text-gray">
-                        {!! Form::checkbox('tags[]', $tag->id, null) !!}
+                @foreach ($tags as $tag)
+                <div class="d-inline-flex">
+                    <label class="text-gray label-check d-flex">
+                        {!! Form::checkbox('tags[]', $tag->id, null, ['class' => 'checkbox input-check']) !!}
+                        <span class="checkbox mr-2"></span>
                         {{$tag->name}}
                     </label>
+                </div>
                 @endforeach
                 <div class="d-flex">
                     @error('tags')

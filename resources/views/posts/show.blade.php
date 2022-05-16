@@ -2,12 +2,12 @@
     <div class="container py-8">
         <div class="sm:px-4">
             <h1 class="text-4xl font-bold text-gray-700">{{$post->name}}</h1>
-            <div class="text-lg text-gray-400 my-4">
+            <div class="text-lg text-gray-400 my-4 break-words">
                 {!!$post->extract!!}
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
                 {{-- Main content --}}
-                <div class="col-span-2">
+                <div class="lg:col-span-2">
                     <figure>
                         @if ($post->image)
             
@@ -16,8 +16,8 @@
                             <img class="w-full h-72 object-cover object-center rounded-md" src="{{asset('img/img-ask.jpg')}}" alt="">
                         @endif
                     </figure>
-                    <div class="my-6 text-base text-gray-500 font-bold">
-                        {!!$post->body!!}
+                    <div class="my-6 text-base text-gray-500 break-words">
+                        {!! $post->body !!}
                     </div>
                 </div>
                 {{-- Related content --}}

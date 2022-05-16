@@ -11,11 +11,11 @@
     </a>
     <div class="px-6 py-4 h-56 scrollCustom overflow-y-auto bg-slate-50">
         <a href="{{route('posts.show', $post)}}">
-            <h2 class="font-bold text-xl text-gray-700 mb-4">
+            <h2 class="font-bold text-xl text-gray-700 mb-4 break-words">
                 {{$post->name}}
             </h2>
         </a>
-        <div class="text-gray-400 my-4">
+        <div class="text-gray-400 my-4 break-words">
             {!!$post->extract!!}
         </div>
         <div class="pb-4">

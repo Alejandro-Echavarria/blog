@@ -10,7 +10,7 @@ use App\Models\Tag;
 use Illuminate\Support\Facades\Storage;
 
 // Import of validation file
-use App\Http\Requests\StoreFormRequest;
+use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
@@ -43,11 +43,11 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreFormRequest $request)
+    public function store(PostRequest $request)
     {
 
         $data = $request->all();
-        $data['user_id'] = auth()->user()->id;
+        // $data['user_id'] = auth()->user()->id;
 
         $post = Post::create($data);
 
@@ -95,7 +95,10 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        return view('admin.posts.edit', compact('post'));
+        $categories = Category::pluck('name', 'id');
+        $tags = Tag::all();
+
+        return view('admin.posts.edit', compact('post', 'categories', 'tags'));
     }
 
     /**
@@ -105,9 +108,41 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(PostRequest $request, Post $post)
     {
-        //
+        $post->update($request->all());
+        
+        // Validamos si existe una imagen en la petición
+        if ($request->file('file')) {
+            
+            $url = Storage::put('posts', $request->file('file'));
+
+            // Indicamos que si existe una imagen la eliminemos
+            if ($post->image) {
+                
+                Storage::delete($post->image->url);
+                
+                // Editamos el archivo
+                $post->image->update([
+                    'url' => $url
+                ]);
+            }else{// En el caso de no existir una imagen asociada
+                $post->image()->create([
+                    'url' => $url
+                ]);
+            }
+        }
+
+        // Validamos si existe tags en la petición
+        if ($request->tags) {
+            
+            /* Llamamos a la relaci►2n tags y le pasamos el metodo attach
+                pasandole los tags de la variable o objeto request
+            */
+            $post->tags()->sync($request->tags);
+        }
+
+        return redirect()->route('admin.posts.edit', $post)->with('info', 'El post se actualizó con éxito.');
     }
 
     /**
@@ -118,6 +153,8 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+
+        return redirect()->route('admin.posts.index')->with('info', 'El post eliminó con éxito.');
     }
 }

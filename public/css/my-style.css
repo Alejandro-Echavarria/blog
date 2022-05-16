@@ -29,11 +29,11 @@
     -moz-border-radius: 6px;
     -ms-border-radius: 6px;
     -o-border-radius: 6px;
-    transition: all 0.275s;
-    -webkit-transition: all 0.275s;
-    -moz-transition: all 0.275s;
-    -ms-transition: all 0.275s;
-    -o-transition: all 0.275s;
+    transition: all 0.175s;
+    -webkit-transition: all 0.175s;
+    -moz-transition: all 0.175s;
+    -ms-transition: all 0.175s;
+    -o-transition: all 0.175s;
 }
 
 .label-check{
@@ -50,7 +50,7 @@
     height: 20px;
     margin-left: 5px;
     margin-top: 0px;
-    border-color: rgb(124, 167, 140);
+    border-color: #24c78e;
     border-top-color: transparent;
     border-left-color: transparent;
     border-radius: 0;
@@ -96,7 +96,24 @@
     border-radius: 20px;
     /* border: 3px solid orange; */
 }
- 
+
+.hoverArticle{
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+}
+
+.hoverArticle:hover{
+    transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -o-transform: translateY(-5px);
+}
+
+
 @media (max-width: 476px){
     
     .hidden-letters{display: none;}

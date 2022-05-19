@@ -97,6 +97,11 @@
     /* border: 3px solid orange; */
 }
 
+*::-webkit-scrollbar:horizontal {
+    height: 5px;
+    width: 5px;
+}
+
 .hoverArticle{
     transition: all 0.2s ease-out;
     -webkit-transition: all 0.2s ease-out;

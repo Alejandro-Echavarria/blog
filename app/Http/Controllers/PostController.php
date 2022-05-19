@@ -18,6 +18,8 @@ class PostController extends Controller
 
     public function show(Post $post){
         
+        $this->authorize('published', $post);
+
         $similars = Post::where('category_id', $post->category_id)
                         ->where('status', 1)// Indicamos que solo queremos posts activos
                         ->where('id', '!=', $post->id)// Indicamos que sean diferentes al que mandamos

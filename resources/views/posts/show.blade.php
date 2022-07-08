@@ -23,7 +23,7 @@
                 {{-- Related content --}}
                 <aside class="col-span-1">
                     <h3 class="text-2xl text-gray-700 font-bold">Más de {{$post->category->name}}</h3>
-                    <ul>
+                    <ul class="list-none">
                         @foreach ($similars as $similar)
                             <li class="mb-4">
                                 <a class="flex mt-2" href="{{route('posts.show', $similar)}}">

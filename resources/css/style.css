@@ -13,3 +13,10 @@
         @apply px-8;
     }
 }
+
+@layer base {
+    ul {
+        @apply list-disc;
+        @apply list-inside;
+    }
+}

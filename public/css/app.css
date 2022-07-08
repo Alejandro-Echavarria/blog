@@ -550,6 +550,10 @@ select {
 [type='file']:focus {
   outline: 1px auto -webkit-focus-ring-color;
 }
+    ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
 
 *, ::before, ::after {
   --tw-translate-x: 0;
@@ -982,9 +986,6 @@ select {
 .col-span-6 {
   grid-column: span 6 / span 6;
 }
-.col-span-2 {
-  grid-column: span 2 / span 2;
-}
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
@@ -1113,6 +1114,9 @@ select {
 .inline-block {
   display: inline-block;
 }
+.inline {
+  display: inline;
+}
 .flex {
   display: flex;
 }
@@ -1127,15 +1131,6 @@ select {
 }
 .hidden {
   display: none;
-}
-.aspect-video {
-  aspect-ratio: 16 / 9;
-}
-.aspect-auto {
-  aspect-ratio: auto;
-}
-.aspect-square {
-  aspect-ratio: 1 / 1;
 }
 .h-5 {
   height: 1.25rem;
@@ -1245,9 +1240,6 @@ select {
 .max-w-6xl {
   max-width: 72rem;
 }
-.max-w-sm {
-  max-width: 24rem;
-}
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1305,6 +1297,9 @@ select {
 .list-disc {
   list-style-type: disc;
 }
+.list-none {
+  list-style-type: none;
+}
 .grid-cols-6 {
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
@@ -1349,9 +1344,6 @@ select {
 }
 .gap-10 {
   gap: 2.5rem;
-}
-.gap-3 {
-  gap: 0.75rem;
 }
 .space-x-8 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;

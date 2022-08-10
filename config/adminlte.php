@@ -251,6 +251,11 @@ return [
             'route'         => 'admin.home',
             'icon'        => 'fas fa-chart-line fa-fw',
         ],
+        [
+            'text'        => 'Usuarios',
+            'route'         => 'admin.users.index',
+            'icon'        => 'fas fa-users fa-fw',
+        ],
         ['header' => 'ADMINISTRACIÓN'],
         [
             'text' => 'Categorías',

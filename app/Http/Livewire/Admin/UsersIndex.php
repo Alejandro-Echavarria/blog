@@ -2,15 +2,15 @@
 
 namespace App\Http\Livewire\Admin;
 
+use App\Models\User;
 use Livewire\Component;
-use App\Models\Post;
+
 use Livewire\WithPagination;
 
-class PostIndex extends Component
+class UsersIndex extends Component
 {
-
     use WithPagination;
-    
+
     public $search;
     public $page = 1;
     protected $paginationTheme = 'bootstrap';
@@ -26,11 +26,11 @@ class PostIndex extends Component
 
     public function render()
     {
-        $posts = Post::where('user_id', auth()->user()->id)
-                     ->where('name', 'LIKE', '%'. $this->search . '%')
-                     ->latest('id')
-                     ->paginate(10);
+        $users = User::where('id', 'LIKE', '%'. $this->search . '%')
+                       ->orWhere('name', 'LIKE', '%'. $this->search . '%')
+                       ->orWhere('email', 'LIKE', '%'. $this->search . '%')
+                       ->paginate(10);
 
-        return view('livewire.admin.post-index', compact('posts'));
+        return view('livewire.admin.users-index', compact('users'));
     }
 }

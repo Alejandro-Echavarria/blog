@@ -12,7 +12,7 @@
             <strong>{{session('info')}}</strong>
         </div>
     @endif
-    <div class="card shadow-sm section-color">
+    <div class="card shadow-sm">
         <div class="card-header color-primario">
             <div class="d-flex flex-row justify-content-around align-items-center">
                 <div class="flex-grow-1 mr-1">
@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="card-body table-responsive p-0">
-            <table style="width: 100%;" class="table table-hover table-sm">
+            <table style="width: 100%;" class="table table-hover table-sm table-borderless">
                 <thead>
                     <tr>
                         <th style="width: 10%">ID</th>

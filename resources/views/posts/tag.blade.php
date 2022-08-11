@@ -4,7 +4,7 @@
             <div class="mb-8">
                 <h1 class="text-2xl font-bold text-gray-700">Etiqueta: {{$tag->name}}</h1>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mb-8">
                 @foreach ($posts as $post)
                     <x-card-post :post="$post" />
                 @endforeach

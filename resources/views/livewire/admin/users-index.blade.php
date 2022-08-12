@@ -13,11 +13,6 @@
                         <option value="100" class="text-gray">100</option>
                     </select>
                 </div>
-                <div>
-                    <a href="{{route('admin.users.create')}}" class="btn btn-primary">
-                        <i class="fas fa-plus"></i> <span class="hidden-letters"> Agregar</span>
-                    </a>
-                </div>
             </div>
         </div>
         @if ($users->count())    
@@ -40,11 +35,6 @@
                                 <td>
                                     <div class="d-flex">
                                         <a class="btn btn-sm btn-success mr-1" href="{{route('admin.users.edit', $user)}}"><i class="fas fa-pen"></i></a>
-                                        <form action="{{route('admin.users.destroy', $user)}}" method="POST">
-                                            @csrf
-                                            @method('delete')
-                                            <button class="btn btn-sm btn-danger" type="submit"><i class="fas fa-trash"></i></button>
-                                        </form>
                                     </div>
                                 </td>
                             </tr>

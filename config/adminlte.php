@@ -247,34 +247,38 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Dashboard',
-            'route'         => 'admin.home',
-            'icon'        => 'fas fa-chart-line fa-fw',
+            'text'   => 'Dashboard',
+            'route'  => 'admin.home',
+            'icon'   => 'fas fa-chart-line fa-fw',
+            'can'    => 'admin.home'
         ],
         [
-            'text'        => 'Usuarios',
-            'route'         => 'admin.users.index',
-            'icon'        => 'fas fa-users fa-fw',
+            'text'   => 'Usuarios',
+            'route'  => 'admin.users.index',
+            'icon'   => 'fas fa-users fa-fw',
+            'active' => ['admin/users*'],
+            'can'    => 'admin.users.index'
         ],
-        ['header' => 'ADMINISTRACIÓN'],
         [
-            'text' => 'Categorías',
+            'text'   => 'Categorías',
             'route'  => 'admin.categories.index',
-            'icon' => 'fab fa-fw fa-buffer',
+            'icon'   => 'fab fa-fw fa-buffer',
             'active' => ['admin/categories*'],
+            'can'    => 'admin.categories.index'
         ],
         [
-            'text' => 'Etiquetas',
+            'text'   => 'Etiquetas',
             'route'  => 'admin.tags.index',
-            'icon' => 'fas fa-fw fa-tag',
+            'icon'   => 'fas fa-fw fa-tag',
             'active' => ['admin/tags*'],
+            'can'    => 'admin.tags.index'
         ],
-        ['header' => 'OPCIONES DE BLOG'],
         [
             'text' => 'Posts',
             'route'  => 'admin.posts.index',
             'icon' => 'fas fa-fw fa-clipboard-list',
             'active' => ['admin/posts*'],
+            'can'    => 'admin.posts.index'
         ],
         // [
         //     'text'    => 'multilevel',

@@ -34,7 +34,7 @@
                                 <td>{{$user->email}}</td>
                                 <td>
                                     <div class="d-flex">
-                                        <a class="btn btn-sm btn-success mr-1" href="{{route('admin.users.edit', $user)}}"><i class="fas fa-pen"></i></a>
+                                        <a class="btn btn-sm green-color mr-1" href="{{route('admin.users.edit', $user)}}"><i class="fas fa-pen"></i></a>
                                     </div>
                                 </td>
                             </tr>

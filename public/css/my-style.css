@@ -102,7 +102,7 @@
     width: 5px;
 }
 
-.hoverArticle{
+.hoverArticle {
     transition: all 0.2s ease-out;
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
@@ -110,7 +110,7 @@
     -o-transition: all 0.2s ease-out;
 }
 
-.hoverArticle:hover{
+.hoverArticle:hover {
     transform: translateY(-5px);
     -webkit-transform: translateY(-5px);
     -moz-transform: translateY(-5px);
@@ -118,6 +118,21 @@
     -o-transform: translateY(-5px);
 }
 
+/* Button color */
+.blue-color {
+    background-color: rgb(198, 227, 255);
+    color:  rgb(0, 113, 227);
+}
+
+.green-color {
+    background-color: rgb(210, 235, 210);
+    color: rgb(67, 134, 67);
+}
+
+.red-color {
+    background-color: rgb(245, 199, 199);
+    color: rgb(206, 73, 73);
+}
 
 @media (max-width: 476px){
     

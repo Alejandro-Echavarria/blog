@@ -3,8 +3,9 @@
 @section('title', 'Smaet')
 
 @section('content_header')
-    <h1 class="font-weight-bold text-gray-dark">Lista de etiquetas</h1>
+    <h1 class="font-weight-bold text-gray-dark">Lista de roles</h1>
 @stop
+
 
 @section('content')
     @if (session('info'))
@@ -27,7 +28,7 @@
                     </select>
                 </div>
                 <div>
-                    <a href="{{route('admin.tags.create')}}" class="btn blue-color">
+                    <a href="{{route('admin.roles.create')}}" class="btn blue-color">
                         <i class="fas fa-plus"></i> <span class="hidden-letters font-weight-bold"> Agregar</span>
                     </a>
                 </div>
@@ -43,14 +44,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($tags as $tag)
+                    @foreach ($roles as $role)
                         <tr class="px-2">
-                            <td>{{$tag->id}}</td>
-                            <td>{{$tag->name}}</td>
+                            <td>{{$role->id}}</td>
+                            <td>{{$role->name}}</td>
                             <td>
                                 <div class="d-flex">
-                                    <a class="btn btn-sm green-color mr-1" href="{{route('admin.tags.edit', $tag)}}"><i class="fas fa-pen"></i></a>
-                                    <form action="{{route('admin.tags.destroy', $tag)}}" method="POST">
+                                    <a class="btn btn-sm green-color mr-1" href="{{route('admin.roles.edit', $role)}}"><i class="fas fa-pen"></i></a>
+                                    <form action="{{route('admin.roles.destroy', $role)}}" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button class="btn btn-sm red-color" type="submit"><i class="fas fa-trash"></i></button>

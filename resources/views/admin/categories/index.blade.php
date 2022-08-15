@@ -27,8 +27,8 @@
                     </select>
                 </div>
                 <div>
-                    <a href="{{route('admin.categories.create')}}" class="btn btn-primary">
-                        <i class="fas fa-plus"></i> <span class="hidden-letters"> Agregar</span>
+                    <a href="{{route('admin.categories.create')}}" class="btn blue-color">
+                        <i class="fas fa-plus"></i> <span class="hidden-letters font-weight-bold"> Agregar</span>
                     </a>
                 </div>
             </div>
@@ -49,11 +49,11 @@
                             <td>{{$category->name}}</td>
                             <td>
                                 <div class="d-flex">
-                                    <a class="btn btn-sm btn-success mr-1" href="{{route('admin.categories.edit', $category)}}"><i class="fas fa-pen"></i></a>
+                                    <a class="btn btn-sm green-color mr-1" href="{{route('admin.categories.edit', $category)}}"><i class="fas fa-pen"></i></a>
                                     <form action="{{route('admin.categories.destroy', $category)}}" method="POST">
                                         @csrf
                                         @method('delete')
-                                        <button class="btn btn-sm btn-danger" type="submit"><i class="fas fa-trash"></i></button>
+                                        <button class="btn btn-sm red-color" type="submit"><i class="fas fa-trash"></i></button>
                                     </form>
                                 </div>
                             </td>

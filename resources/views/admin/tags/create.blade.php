@@ -13,16 +13,16 @@
 
                 @include('admin.tags.partials.form')
                 
-                {!! Form::submit('Crear', ['class' => 'btn btn-primary font-weight-bold']) !!}
+                {!! Form::submit('Crear', ['class' => 'btn blue-color font-weight-bold']) !!}
 
             {!! Form::close() !!}
         </div>
     </div>
 @stop
 
-{{-- @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
-@stop --}}
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/my-style.css')}}">
+@stop
 
 @section('js')
     <script src="{{asset('/vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js')}}"></script>

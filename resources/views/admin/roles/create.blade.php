@@ -3,7 +3,7 @@
 @section('title', 'Smaet')
 
 @section('content_header')
-    <h1 class="font-weight-bold text-gray-dark">Dashboard</h1>
+    <h1 class="font-weight-bold text-gray-dark">Crear un rol</h1>
 @stop
 
 @section('content')

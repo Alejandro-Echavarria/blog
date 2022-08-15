@@ -18,7 +18,7 @@
 
             @include('admin.posts.partials.form')
 
-            {!! Form::submit('Actualizar', ['class' => 'btn btn-primary font-weight-bold']) !!}
+            {!! Form::submit('Actualizar', ['class' => 'btn blue-color font-weight-bold']) !!}
 
             {!! Form::close() !!}
         </div>

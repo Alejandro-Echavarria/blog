@@ -264,7 +264,7 @@ return [
             'route'  => 'admin.roles.index',
             'icon'   => 'fas fa-key fa-fw',
             'active' => ['admin/roles*'],
-            // 'can'    => 'admin.roles.index'
+            'can'    => 'admin.roles.index'
         ],
         [
             'text'   => 'Categorías',

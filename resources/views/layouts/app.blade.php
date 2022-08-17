@@ -11,9 +11,12 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <!-- My Styles -->
         <link rel="stylesheet" href="{{ asset('css/my-style.css') }}">
+        {{-- Font awesome --}}
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
         @livewireStyles
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/post.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased bg-slate-100">
         <x-jet-banner />

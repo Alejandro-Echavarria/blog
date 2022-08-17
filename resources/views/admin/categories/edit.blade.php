@@ -34,11 +34,15 @@
                     @enderror
                 </div>
 
-                {!! Form::submit('Actualizar', ['class' => 'btn btn-primary font-weight-bold']) !!}
+                {!! Form::submit('Actualizar', ['class' => 'btn blue-color font-weight-bold']) !!}
 
             {!! Form::close() !!}
         </div>
     </div>
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/my-style.css')}}">
 @stop
 
 @section('js')

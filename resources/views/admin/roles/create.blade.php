@@ -7,5 +7,19 @@
 @stop
 
 @section('content')
-    <p></p>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            {!! Form::open(['route' => 'admin.roles.store']) !!}
+
+                @include('admin.roles.partials.form')
+
+                {!! Form::submit('Crear', ['class' => 'btn blue-color font-weight-bold']) !!}
+
+            {!! Form::close() !!}
+        </div>
+    </div>
+@stop
+
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/my-style.css')}}">
 @stop

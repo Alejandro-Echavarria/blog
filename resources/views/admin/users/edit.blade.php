@@ -28,7 +28,7 @@
                     </div>
                 @endforeach
 
-                {!! Form::submit('Actualizar', ['class' => 'btn btn-primary mt-4']) !!}
+                {!! Form::submit('Actualizar', ['class' => 'btn blue-color mt-4 font-weight-bold']) !!}
             {!! Form::close() !!}
         </div>
     </div>

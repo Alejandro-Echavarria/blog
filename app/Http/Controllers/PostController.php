@@ -6,14 +6,14 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Tag;
-
 class PostController extends Controller
 {
     public function index(){
 
         $posts = Post::where('status', 1)->latest('id')->paginate(9);
+        $categories = Category::all();
 
-        return view('posts.index', compact('posts'));
+        return view('posts.index', compact('posts', 'categories'));
     }
 
     public function show(Post $post){

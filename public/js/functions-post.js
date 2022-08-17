@@ -9,12 +9,6 @@ $(document).ready( function() {
     document.getElementById('file').addEventListener('change', cambiarImagen);
 });
 
-/**
- * It takes the file from the input, reads it, and then sets the src attribute of the image to the
- * result of the read
- * @param event - The event object is a JavaScript event that is sent to an element when an event
- * occurs on the element.
- */
 function cambiarImagen(event){
 
     const file = event.target.files[0];

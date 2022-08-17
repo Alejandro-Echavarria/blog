@@ -4,17 +4,17 @@
             <div class="flex items-center">
                 {{-- logotipo --}}
                 <a href="/" class="flex-shrink-0">
-                    <img class="h-8 w-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
+                    <img class="h-12 w-12" src="{{asset('img/logo-final.svg')}}" alt="Logo representativo">
                 </a>
                 {{-- Menu lg --}}
-                <div class="hidden md:block">
+                {{-- <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         @foreach ($categories as $category)
 
                             <a href="{{route('posts.category', $category)}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{$category->name}}</a>
                         @endforeach
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="hidden md:block">
                 <div class="ml-4 flex items-center md:ml-6">

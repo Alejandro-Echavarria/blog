@@ -134,6 +134,10 @@
     color: rgb(206, 73, 73);
 }
 
+.accordion-content {
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+}
+
 @media (max-width: 476px){
     
     .hidden-letters{display: none;}

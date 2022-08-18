@@ -31,6 +31,6 @@
 
 @section('js')
     <script src="{{asset('/vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js')}}"></script>
-    <script src="{{asset('/vendor/ckeditor-clasic/ckeditor-clasic.js')}}"></script>
+    <script src="{{asset('/vendor/ckeditor-clasic/build/ckeditor.js')}}"></script>
     <script src="{{asset('/js/functions-post.js')}}"></script>
 @stop

@@ -12,8 +12,9 @@ class PostController extends Controller
 
         $posts = Post::where('status', 1)->latest('id')->paginate(9);
         $categories = Category::all();
+        $tags = Tag::all();
 
-        return view('posts.index', compact('posts', 'categories'));
+        return view('posts.index', compact('posts', 'categories', 'tags'));
     }
 
     public function show(Post $post){
@@ -37,7 +38,10 @@ class PostController extends Controller
                      ->latest('id')
                      ->paginate(6);
 
-        return view('posts.category', compact('posts', 'category'));
+        $categories = Category::all();
+        $tags = Tag::all();
+
+        return view('posts.category', compact('posts', 'category', 'categories', 'tags'));
     }
 
     public function tag(Tag $tag){
@@ -47,6 +51,9 @@ class PostController extends Controller
                      ->latest('id')
                      ->paginate(6);
 
-        return view('posts.tag', compact('posts', 'tag'));
+        $categories = Category::all();
+        $tags = Tag::all();
+
+        return view('posts.tag', compact('posts', 'tag', 'categories', 'tags'));
     }
 }

@@ -138,6 +138,14 @@
     transition: max-height 0.3s ease-out, padding 0.3s ease;
 }
 
+.iconos-color-secundario {
+    color: rgb(2, 98, 223);
+}
+
+.border-color-secundario {
+    border-color: rgb(2, 98, 223);
+}
+
 @media (max-width: 476px){
     
     .hidden-letters{display: none;}

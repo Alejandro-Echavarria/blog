@@ -7,7 +7,7 @@ accordionHeader.forEach((header) => {
 
 		// Condition handling
 		if (accordionMaxHeight == "0px" || accordionMaxHeight.length == 0) {
-			accordionContent.style.maxHeight = `${accordionContent.scrollHeight + 32}px`;
+			accordionContent.style.maxHeight = `${accordionContent.scrollHeight + 10}px`;
 			header.querySelector(".fas").classList.remove("fa-plus");
 			header.querySelector(".fas").classList.add("fa-minus");
 

@@ -1,9 +1,10 @@
 <x-app-layout>
     <div class="container py-8">
-        <div class="sm:px-4">
-            <div class="mb-8">
-                <h1 class="text-2xl font-bold text-gray-700">Categor&iacute;a: {{$category->name}}</h1>
-            </div>
+        <div class="px-2 sm:px-5">
+            <h1 class="text-2xl font-bold text-gray-700">Categor&iacute;a: {{$category->name}}</h1>
+        </div>
+        <x-filters-post :tags="$tags" :categories="$categories" />
+        <div class="px-5">
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mb-8">
                 @foreach ($posts as $post)
                     <x-card-post :post="$post" />

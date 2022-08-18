@@ -1,3 +1,7 @@
+@php
+    $decorador = '<div class="absolute w-6 m-auto inset-x-0 bottom-0 top-7"><div class="border-b-4 border-color-secundario rounded-md"></div></div>';
+@endphp
+
 <nav class="bg-gray-800" x-data="{ open: false }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
@@ -7,14 +11,14 @@
                     <img class="h-12 w-12" src="{{asset('img/logo-final.svg')}}" alt="Logo representativo">
                 </a>
                 {{-- Menu lg --}}
-                {{-- <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        @foreach ($categories as $category)
-
-                            <a href="{{route('posts.category', $category)}}" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">{{$category->name}}</a>
-                        @endforeach
+                <div class="hidden md:block relative ml-10 ">
+                    <div class="items-baseline">
+                        <a href="{{route('posts.index')}}" class="text-gray-50 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-bold">
+                            Inicio 
+                        </a>
+                        {!!request()->routeIs('posts.index') ? $decorador : ""!!}
                     </div>
-                </div> --}}
+                </div>
             </div>
             <div class="hidden md:block">
                 <div class="ml-4 flex items-center md:ml-6">
@@ -31,16 +35,6 @@
                                         alt="">
                                 </button>
                             </div>
-                            <!--
-                                Dropdown menu, show/hide based on menu state.
-                
-                                Entering: "transition ease-out duration-100"
-                                    From: "transform opacity-0 scale-95"
-                                    To: "transform opacity-100 scale-100"
-                                Leaving: "transition ease-in duration-75"
-                                    From: "transform opacity-100 scale-100"
-                                    To: "transform opacity-0 scale-95"
-                            -->
                             <div x-show="open" x-on:click.away="open = false" class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                                 role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
                                 tabindex="-1">
@@ -51,7 +45,7 @@
                                 
                                 @can('admin.home')
                                     <a href="{{ route('admin.home') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1"
-                                        id="user-menu-item-0">Dashboard
+                                        id="user-menu-item-1">Dashboard
                                     </a>
                                 @endcan
 
@@ -106,12 +100,7 @@
     <!-- Mobile menu, show/hide based on menu state. -->
     <div class="md:hidden" id="mobile-menu" x-show="open" x-on:click.away="open = false">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            {{-- <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a> --}}
-            @foreach ($categories as $category)
-                
-                <a href="{{route('posts.category', $category)}}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">{{$category->name}}</a>
-            @endforeach
+            <a href="{{route('posts.index')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
         </div>
         @auth
             <div class="pt-4 pb-3 border-t border-gray-700">

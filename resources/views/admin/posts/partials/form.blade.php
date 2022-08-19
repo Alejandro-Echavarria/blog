@@ -89,7 +89,7 @@
         <div class="mt-3">
             <h6 class="text-gray">Indicaciones</h6>
             <ul class="text-gray">
-                <li>Las imagenes</li>
+                <li>Las imagenes deben ser en formato landscape</li>
             </ul>
         </div>
     </div>

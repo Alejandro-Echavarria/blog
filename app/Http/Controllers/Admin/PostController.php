@@ -76,7 +76,7 @@ class PostController extends Controller
         }
 
         // Redireccionamos al post creado
-        return redirect()->route('admin.posts.edit', $post);
+        return redirect()->route('admin.posts.edit', $post)->with('info', 'El post se creó con éxito.');;
     }
 
     /**

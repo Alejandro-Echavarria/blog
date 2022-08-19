@@ -9,9 +9,7 @@
 
 @section('content')
     @if (session('info'))
-        <div class="alert alert-success">
-            <strong>{{session('info')}}</strong>
-        </div>
+        <x-alertas :message="session('info')" :type="'green-color'" />
     @endif
     <div class="card shadow-sm">
         <div class="card-header color-primario">

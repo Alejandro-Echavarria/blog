@@ -8,9 +8,7 @@
 
 @section('content')
     @if (session('info'))
-        <div class="alert alert-success">
-            <strong>{{session('info')}}</strong>
-        </div>
+        <x-alertas :message="session('info')" :type="'green-color'" />
     @endif
     @livewire('admin.post-index')
 @stop

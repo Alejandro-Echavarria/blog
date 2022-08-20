@@ -146,6 +146,16 @@
     border-color: rgb(2, 98, 223);
 }
 
+.color-logo {
+    background: rgb(31,41,55);
+    background: -moz-linear-gradient(180deg, rgba(31,41,55,1) 0%, rgba(2,98,223,1) 35%, rgba(241,245,249,1) 100%);
+    background: -webkit-linear-gradient(180deg, rgba(31,41,55,1) 0%, rgba(2,98,223,1) 35%, rgba(241,245,249,1) 100%);
+    background: linear-gradient(180deg, rgba(31,41,55,1) 0%, rgba(2,98,223,1) 35%, rgba(241,245,249,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
 @media (max-width: 476px){
     
     .hidden-letters{display: none;}

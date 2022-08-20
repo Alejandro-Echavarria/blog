@@ -1,5 +1,6 @@
 @php
     $decorador = '<div class="absolute w-6 m-auto inset-x-0 bottom-0 top-7"><div class="border-b-4 border-color-secundario rounded-md"></div></div>';
+    $decoradorVertical = '<div class="absolute inset-y-0 top-3"><div class="h-6 border-l-4 border-color-secundario rounded-md"></div></div>';
 @endphp
 
 <nav class="bg-gray-800" x-data="{ open: false }">
@@ -8,7 +9,8 @@
             <div class="flex items-center">
                 {{-- logotipo --}}
                 <a href="/" class="flex-shrink-0">
-                    <img class="h-12 w-12" src="{{asset('img/logo-final.svg')}}" alt="Logo representativo">
+                    <p class="font-bold text-gray-200"><span class="color-logo text-3xl">M</span> - dev</p>
+                    {{-- <img class="h-12 w-12" src="{{asset('img/logo-final.svg')}}" alt="Logo representativo"> --}}
                 </a>
                 {{-- Menu lg --}}
                 <div class="hidden md:block relative ml-10 ">
@@ -99,37 +101,45 @@
     
     <!-- Mobile menu, show/hide based on menu state. -->
     <div class="md:hidden" id="mobile-menu" x-show="open" x-on:click.away="open = false">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="{{route('posts.index')}}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+        <div class="px-4 pt-2 pb-3 space-y-1 relative">
+            <a href="{{route('posts.index')}}" class="text-gray-50 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold">Inicio</a>
+            {!!request()->routeIs('posts.index') ? $decoradorVertical : ""!!}
         </div>
         @auth
             <div class="pt-4 pb-3 border-t border-gray-700">
-                <div class="flex items-center px-5">
+                <div class="flex items-center px-4">
                     <div class="flex-shrink-0">
                         <img class="h-10 w-10 rounded-full"
                             src="{{ auth()->user()->profile_photo_url }}"
                             alt="">
                     </div>
                     <div class="ml-3">
-                        <div class="text-base font-medium leading-none text-white">{{ auth()->user()->name }}</div>
-                        <div class="text-sm font-medium leading-none text-gray-400">{{ auth()->user()->email }}</div>
+                        <div class="text-base font-bold leading-none text-white">{{ auth()->user()->name }}</div>
+                        <div class="text-sm font-bold leading-none text-gray-400">{{ auth()->user()->email }}</div>
                     </div>
                 </div>
-                <div class="mt-3 px-2 space-y-1">
-                    <a href="{{ route('profile.show') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Perfil</a>
-                    <a href="{{ route('admin.home') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Dashboard</a>
-                    <form method="POST" action="{{ route('logout') }}" x-data>
-                        @csrf   
-                        <a href="{{ route('logout') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium" @click.prevent="$root.submit();">
-                            Cerrar sesión
-                        </a>
-                    </form>
+                <div class="mt-3">
+                    <div class="px-4 pt-2 space-y-1 relative">
+                        <a href="{{ route('profile.show') }}" class="text-gray-50 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold">Perfil</a>
+                        {!!request()->routeIs('profile.show') ? $decoradorVertical : ""!!}
+                    </div>
+                    <div class="px-4 pt-2 space-y-1 relative">
+                        <a href="{{ route('admin.home') }}" class="text-gray-50 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold">Dashboard</a>
+                    </div>
+                    <div class="px-4 pt-2 space-y-1 relative">
+                        <form method="POST" action="{{ route('logout') }}" x-data>
+                            @csrf   
+                            <a href="{{ route('logout') }}" class="text-gray-50 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold" @click.prevent="$root.submit();">
+                                Cerrar sesión
+                            </a>
+                        </form>
+                    </div>
                 </div>
             </div>
         @else
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-700">
-            <a href="{{ route('login') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</a>
-            <a href="{{ route('register') }}" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Register</a>
+        <div class="px-4 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-700">
+            <a href="{{ route('login') }}" class="text-gray-50 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold">Login</a>
+            <a href="{{ route('register') }}" class="text-gray-50 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-bold">Register</a>
         </div>
 
         @endauth

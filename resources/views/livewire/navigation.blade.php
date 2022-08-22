@@ -15,9 +15,7 @@
                 {{-- Menu lg --}}
                 <div class="hidden md:block relative ml-10 ">
                     <div class="items-baseline">
-                        <a href="{{route('posts.index')}}" class="text-gray-50 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-bold">
-                            Inicio 
-                        </a>
+                        <a href="{{route('posts.index')}}" class="text-gray-50 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-bold">Inicio</a>
                         {!!request()->routeIs('posts.index') ? $decorador : ""!!}
                     </div>
                 </div>

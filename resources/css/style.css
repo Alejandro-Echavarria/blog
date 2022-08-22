@@ -19,4 +19,25 @@
         @apply list-disc;
         @apply list-inside;
     }
+
+    #post-body a {
+        @apply text-blue-700;
+    }
+
+    figure {
+        @apply w-full;
+    }
+
+    table {
+        @apply w-full;
+    }
+
+    th {
+        @apply text-left;
+        @apply border-b;
+    }
+
+    td {
+        @apply border-b;
+    }
 }

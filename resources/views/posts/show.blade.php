@@ -16,7 +16,7 @@
                             <img class="w-full h-72 object-cover object-center rounded-md" src="{{asset('img/img-ask.jpg')}}" alt="">
                         @endif
                     </figure>
-                    <div class="my-6 text-base text-gray-500 break-words">
+                    <div id="post-body" class="my-6 text-base text-gray-500 break-words">
                         {!! $post->body !!}
                     </div>
                 </div>

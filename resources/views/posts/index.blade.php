@@ -1,7 +1,7 @@
 <x-app-layout>
     <div class="container py-8">
         <x-filters-post :tags="$tags" :categories="$categories" />
-        <div class="px-2 sm:px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+        <div class="sm:px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
             @foreach ($posts as $post)
                 <article class="w-full h-80 shadow overflow-auto bg-cover bg-center rounded-md @if($loop->first) md:col-span-2 @endif" style="background-image: url(@if($post->image) {{Storage::url($post->image->url)}} @else {{asset('img/img-ask.jpg')}} @endif)">
                     <div class="w-full h-full px-8 flex flex-col justify-center">

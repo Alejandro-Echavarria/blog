@@ -560,21 +560,35 @@ select {
   color: rgb(29 78 216 / var(--tw-text-opacity));
 }
 
-    figure {
+    #post-body table {
   width: 100%;
+  table-layout: auto;
 }
 
-    table {
-  width: 100%;
+    #post-body figure {
+  overflow-x: auto;
 }
-
-    th {
+    
+    #post-body th {
   text-align: left;
   border-bottom-width: 1px;
 }
 
-    td {
+    #post-body td {
   border-bottom-width: 1px;
+}
+
+    #post-body h1, h2, h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
+}
+
+    #post-body blockquote {
+  border-left-width: 2px;
+  padding-left: 0.75rem;
+  font-style: italic;
 }
 
 *, ::before, ::after {

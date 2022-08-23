@@ -24,20 +24,32 @@
         @apply text-blue-700;
     }
 
-    figure {
+    #post-body table {
         @apply w-full;
+        @apply table-auto;
     }
 
-    table {
-        @apply w-full;
+    #post-body figure {
+        @apply overflow-x-auto;
     }
-
-    th {
+    
+    #post-body th {
         @apply text-left;
         @apply border-b;
     }
 
-    td {
+    #post-body td {
         @apply border-b;
+    }
+
+    #post-body h1, h2, h3 {
+        @apply text-2xl;
+        @apply text-gray-700
+    }
+
+    #post-body blockquote {
+        @apply border-l-2;
+        @apply pl-3;
+        @apply italic;
     }
 }

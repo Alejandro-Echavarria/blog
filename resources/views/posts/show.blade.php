@@ -41,4 +41,11 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let tableRemove = document.querySelector("figure.table");
+            tableRemove.classList.remove('table');
+        });
+    </script>
 </x-app-layout>

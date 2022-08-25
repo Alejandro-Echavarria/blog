@@ -44,8 +44,12 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            let tableRemove = document.querySelector("figure.table");
-            tableRemove.classList.remove('table');
+            const tableRemove = document.querySelector("figure.table");
+
+            if (tableRemove) {
+                
+                tableRemove.classList.remove('table');
+            }
         });
     </script>
 </x-app-layout>

@@ -9,3 +9,7 @@
 @section('content')
     <p></p>
 @stop
+
+@section('css')
+    <link rel="stylesheet" href="{{asset('css/my-style.css')}}">
+@stop

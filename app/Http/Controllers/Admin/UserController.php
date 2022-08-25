@@ -20,6 +20,18 @@ class UserController extends Controller
         return view('admin.users.index');
     }
 
+    public function create()
+    {
+        $roles = Role::all();
+
+        return view('admin.users.create' , compact('roles'));
+    }
+    
+    // public function store(UserRequest $request)
+    // {
+
+    // }
+
     public function edit(User $user)
     {
         $roles = Role::all();

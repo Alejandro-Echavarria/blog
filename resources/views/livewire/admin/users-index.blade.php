@@ -13,6 +13,11 @@
                         <option value="100" class="text-gray">100</option>
                     </select>
                 </div>
+                <div>
+                    <a href="{{route('admin.users.create')}}" class="btn blue-color">
+                        <i class="fas fa-plus"></i> <span class="hidden-letters font-weight-bold"> Agregar</span>
+                    </a>
+                </div>
             </div>
         </div>
         @if ($users->count())    

@@ -18,7 +18,7 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
         <script src="{{ asset('js/post.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased bg-slate-100">
+    <body class="font-sans antialiased">
         <x-jet-banner />
         <div class="min-h-screen ">
             @livewire('navigation')

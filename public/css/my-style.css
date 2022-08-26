@@ -161,6 +161,10 @@
     color: transparent;
 }
 
+.personal-border {
+    border: 1px solid rgb(219, 219, 219);
+}
+
 @media (max-width: 476px){
     
     .hidden-letters{display: none;}

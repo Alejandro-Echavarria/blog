@@ -1,5 +1,5 @@
 <div>
-    <div class="card shadow-sm">
+    <div class="card shadow-none personal-border">
         <div class="card-header color-primario">
             <div class="d-flex flex-row justify-content-around align-items-center">
                 <div class="flex-grow-1 mr-1">

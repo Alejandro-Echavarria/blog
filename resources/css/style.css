@@ -17,7 +17,20 @@
 @layer base {
     ul {
         @apply list-disc;
-        @apply list-inside;
+        @apply mt-3;
+    }
+
+    ol {
+        @apply list-decimal;
+        @apply mt-3;
+    }
+
+    #post-body ul {
+        @apply pl-14;
+    }
+
+    #post-body ol {
+        @apply pl-14;
     }
 
     #post-body a {

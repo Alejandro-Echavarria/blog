@@ -3,7 +3,7 @@
     {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre completo']) !!}
     
     @error('name')
-        <small class="text-danger">{{$message}}</small>
+        <small class="text-danger">{{__($message)}}</small>
     @enderror    
 </div>
 
@@ -12,30 +12,32 @@
     {!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'Correo electrónico']) !!}
 
     @error('email')
-        <small class="text-danger">{{$message}}</small>
+        <small class="text-danger">{{__($message)}}</small>
     @enderror  
 </div>
 
-<div class="form-row">
-    <div class="form-group col-md-6">
+@if (Request::route()->getName() == 'admin.users.create')
+    <div class="form-row">
+        <div class="form-group col-md-6">
 
-        {!! Form::label('password', 'Contraseña') !!}
-        {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Contraseña']) !!}
-    
-        @error('password')
-            <small class="text-danger">{{$message}}</small>
-        @enderror  
-    </div>
-    <div class="form-group col-md-6">
+            {!! Form::label('password', 'Contraseña') !!}
+            {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Contraseña']) !!}
         
-        {!! Form::label('confirm_password', 'Repite la contraseña') !!}
-        {!! Form::password('confirm_password', ['class' => 'form-control', 'placeholder' => 'Repite la contraseña']) !!}
-    
-        @error('confirm_password')
-            <small class="text-danger">{{$message}}</small>
-        @enderror  
+            @error('password')
+                <small class="text-danger">{{$message}}</small>
+            @enderror  
+        </div>
+        <div class="form-group col-md-6">
+            
+            {!! Form::label('confirm_password', 'Repite la contraseña') !!}
+            {!! Form::password('confirm_password', ['class' => 'form-control', 'placeholder' => 'Repite la contraseña']) !!}
+        
+            @error('confirm_password')
+                <small class="text-danger">{{$message}}</small>
+            @enderror  
+        </div>
     </div>
-</div>
+@endif
 
 <div class="form-group">
     <p class="font-weight-bold">Listado de roles</p>

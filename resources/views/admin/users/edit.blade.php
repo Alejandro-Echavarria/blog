@@ -3,31 +3,23 @@
 @section('title', 'Smaet')
 
 @section('content_header')
-    <h1 class="font-weight-bold text-gray-dark">Asignar un rol</h1>
+    <h1 class="font-weight-bold text-gray-dark">Editar usuario</h1>
 @stop
 
 @section('content')
     @if (session('info'))
         <x-alertas :message="session('info')" :type="'green-color'" />
     @endif
-    <div class="card shadow-sm">
+    <div class="card shadow-none personal-border">
         <div class="card-body">
-            <p class="font-weight-bold">Nombre:</p>
-            <p class="form-control mb-4">{{$user->name}}</p>
 
-            <p class="font-weight-bold">Listado de roles</p>
             {!! Form::model($user, [ 'route' => ['admin.users.update', $user], 'method' => 'put' ]) !!}
-                @foreach ($roles as $role)
-                    <div>
-                        <label>
-                            {!! Form::checkbox('roles[]', $role->id, null, ['class' => 'mr-1']) !!}
-                            {{$role->name}}
-                        </label>
-                    </div>
-                @endforeach
+
+                @include('admin.users.partials.form')
 
                 {!! Form::submit('Actualizar', ['class' => 'btn blue-color mt-4 font-weight-bold']) !!}
             {!! Form::close() !!}
+            
         </div>
     </div>
 @stop

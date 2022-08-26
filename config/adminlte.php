@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'logo' => '<b>S</b>maet',
+    'logo' => 'maetdev',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -124,7 +124,7 @@ return [
     'classes_body' => '',
     'classes_brand' => '',
     'classes_brand_text' => '',
-    'classes_content_wrapper' => 'color-secundario',
+    'classes_content_wrapper' => 'bg-white',
     'classes_content_header' => '',
     'classes_content' => '',
     'classes_sidebar' => 'sidebar-dark-primary elevation-1 color-primario',

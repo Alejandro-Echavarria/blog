@@ -10,7 +10,7 @@
     @if (session('info'))
         <x-alertas :message="session('info')" :type="'green-color'" />
     @endif
-    <div class="card shadow-sm">
+    <div class="card shadow-none personal-border">
         <div class="card-body">
             {!! Form::model($tag, ['route' => ['admin.tags.update', $tag], 'method' => 'put']) !!}
 

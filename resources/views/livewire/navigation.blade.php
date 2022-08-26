@@ -3,7 +3,7 @@
     $decoradorVertical = '<div class="absolute inset-y-0 top-3"><div class="h-6 border-l-4 border-color-secundario rounded-md"></div></div>';
 @endphp
 
-<nav class="bg-gray-800" x-data="{ open: false }">
+<nav class="color-primario" x-data="{ open: false }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
             <div class="flex items-center">

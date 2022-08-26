@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <div class="card shadow-sm">
+    <div class="card shadow-none personal-border">
         <div class="card-body">
             {!! Form::open(['route' => 'admin.tags.store']) !!}
 

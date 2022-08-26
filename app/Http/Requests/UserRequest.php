@@ -27,12 +27,24 @@ class UserRequest extends FormRequest
 
         $rules = [
             'name' => 'required',
-            'email' => 'required',
-            'password' => 'required',
-            'confirm_password' => 'required',
+            'email' => 'required|unique:users|email:rfc,dns',
             'roles' => 'required',
         ];
+        
+        if ($user) {
+            
+            $rules['email'] = 'required|unique:users,email,' . $user->id; 
+        }
 
+        if (empty($user)) {
+
+            $regex = 
+
+            $rules = array_merge($rules, [
+                'password' => 'required',
+                'confirm_password' => 'required'
+            ]);
+        }
 
         return $rules;
     }

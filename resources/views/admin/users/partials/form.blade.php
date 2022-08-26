@@ -11,7 +11,7 @@
     {!! Form::label('email', 'Correo') !!}
     {!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'Correo electrónico']) !!}
 
-    @error('name')
+    @error('email')
         <small class="text-danger">{{$message}}</small>
     @enderror  
 </div>
@@ -22,16 +22,16 @@
         {!! Form::label('password', 'Contraseña') !!}
         {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Contraseña']) !!}
     
-        @error('name')
+        @error('password')
             <small class="text-danger">{{$message}}</small>
         @enderror  
     </div>
     <div class="form-group col-md-6">
         
-        {!! Form::label('password', 'Repite la contraseña') !!}
-        {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Repite la contraseña']) !!}
+        {!! Form::label('confirm_password', 'Repite la contraseña') !!}
+        {!! Form::password('confirm_password', ['class' => 'form-control', 'placeholder' => 'Repite la contraseña']) !!}
     
-        @error('name')
+        @error('confirm_password')
             <small class="text-danger">{{$message}}</small>
         @enderror  
     </div>
@@ -49,9 +49,9 @@
                     </label>
                 </div>
             @endforeach
+            @error('roles')
+                <small class="text-danger">{{$message}}</small>
+            @enderror
         </div>
-        @error('name')
-            <small class="text-danger">{{$message}}</small>
-        @enderror
     </div>
 </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
@@ -27,10 +28,12 @@ class UserController extends Controller
         return view('admin.users.create' , compact('roles'));
     }
     
-    // public function store(UserRequest $request)
-    // {
+    public function store(UserRequest $request)
+    {
+        $data = $request->all();
 
-    // }
+        return $data;
+    }
 
     public function edit(User $user)
     {

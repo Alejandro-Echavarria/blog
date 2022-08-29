@@ -1,18 +1,18 @@
 <div class="form-group">
     {!! Form::label('name', 'Nombre') !!}
-    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre completo']) !!}
+    {!! Form::text('name', null, ['class' => 'form-control' . ($errors->has('name') ? ' is-invalid' : null), 'placeholder' => 'Nombre completo']) !!}
     
     @error('name')
-        <small class="text-danger">{{__($message)}}</small>
+        <small class="text-danger">{{($message)}}</small>
     @enderror    
 </div>
 
 <div class="form-group">
     {!! Form::label('email', 'Correo') !!}
-    {!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'Correo electrónico']) !!}
+    {!! Form::text('email', null, ['class' => 'form-control' . ($errors->has('email') ? ' is-invalid' : null), 'placeholder' => 'Correo electrónico']) !!}
 
     @error('email')
-        <small class="text-danger">{{__($message)}}</small>
+        <small class="text-danger">{{($message)}}</small>
     @enderror  
 </div>
 
@@ -21,7 +21,7 @@
         <div class="form-group col-md-6">
 
             {!! Form::label('password', 'Contraseña') !!}
-            {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Contraseña']) !!}
+            {!! Form::password('password', ['class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : null), 'placeholder' => 'Contraseña']) !!}
         
             @error('password')
                 <small class="text-danger">{{$message}}</small>
@@ -30,7 +30,7 @@
         <div class="form-group col-md-6">
             
             {!! Form::label('confirm_password', 'Repite la contraseña') !!}
-            {!! Form::password('confirm_password', ['class' => 'form-control', 'placeholder' => 'Repite la contraseña']) !!}
+            {!! Form::password('confirm_password', ['class' => 'form-control' . ($errors->has('confirm_password') ? ' is-invalid' : null), 'placeholder' => 'Repite la contraseña']) !!}
         
             @error('confirm_password')
                 <small class="text-danger">{{$message}}</small>

@@ -26,14 +26,14 @@ class UserRequest extends FormRequest
         $user = $this->route()->parameter('user');
 
         $rules = [
-            'name' => 'required',
-            'email' => 'required|unique:users|email:rfc,dns',
-            'roles' => 'required',
+            'name' => 'required|max:255',
+            'email' => 'required|unique:users|email:rfc,dns|max:255',
+            'roles' => 'required'
         ];
         
         if ($user) {
             
-            $rules['email'] = 'required|unique:users,email,' . $user->id; 
+            $rules['email'] = 'required|max:255|email:rfc,dns|unique:users,email,' . $user->id; 
         }
 
         if (empty($user)) {
@@ -41,8 +41,8 @@ class UserRequest extends FormRequest
             $regex = 
 
             $rules = array_merge($rules, [
-                'password' => 'required',
-                'confirm_password' => 'required'
+                'password' => 'required|max:255|min:5',
+                'confirm_password' => 'required|max:255|min:5'
             ]);
         }
 

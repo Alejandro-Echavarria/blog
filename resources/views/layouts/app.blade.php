@@ -20,7 +20,7 @@
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
-        <div class="min-h-screen ">
+        <div class="min-h-screen">
             @livewire('navigation')
             <!-- Page Content -->
             <main>

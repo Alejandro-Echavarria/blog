@@ -4,7 +4,7 @@
     $decorador = '<div class="absolute w-6 m-auto  inset-x-0 bottom-0"><div class="border-b-4 border-color-secundario rounded-md"></div></div>';
 @endphp
 
-<div class="mb-5 sm:px-5">
+<div class="mb-5">
     <div class="accordion-header cursor-pointer transition flex space-x-5 items-center h-16 w-32">
         <i class="fas fa-plus iconos-color-secundario"></i>
         <h3 class="text-2xl text-gray-700 font-bold">Filtrar</h3>

@@ -15,7 +15,7 @@
                 {{$post->name}}
             </h2>
         </a>
-        <div class="text-gray-700 my-4 break-words">
+        <div class="text-gray-700 my-4 break-words text-lg">
             {!!$post->extract!!}
         </div>
         <div class="pb-4">

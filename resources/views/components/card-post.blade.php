@@ -1,6 +1,6 @@
 @props(['post'])
 
-<article class="rounded-md shadow overflow-hidden">
+<article class="rounded-2xl overflow-hidden border">
     <a href="{{route('posts.show', $post)}}">
         @if ($post->image)
             
@@ -9,13 +9,13 @@
             <img class="w-full h-72 object-cover object-center" src="{{asset('img/img-ask.jpg')}}" alt="">
         @endif
     </a>
-    <div class="px-6 py-4 h-56 scrollCustom overflow-y-auto bg-white">
+    <div class="px-6 py-4 h-56 scrollCustom overflow-y-auto backdrop-blur-sm bg-white/20 ">
         <a href="{{route('posts.show', $post)}}">
             <h2 class="font-bold text-xl text-gray-700 mb-4 break-words">
                 {{$post->name}}
             </h2>
         </a>
-        <div class="text-gray-400 my-4 break-words">
+        <div class="text-gray-700 my-4 break-words">
             {!!$post->extract!!}
         </div>
         <div class="pb-4">

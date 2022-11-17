@@ -98,6 +98,10 @@
                 </div>
                 <div class="mt-3">
                     <div class="px-4 pt-2 space-y-1 relative">
+                        <a href="{{ route('posts.index') }}" class="text-gray-50 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-sm transition ease-in-out">Inicio</a>
+                        {!!request()->routeIs('posts.index') ? $decoradorVertical : ""!!}
+                    </div>
+                    <div class="px-4 pt-2 space-y-1 relative">
                         <a href="{{ route('profile.show') }}" class="text-gray-50 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-sm transition ease-in-out">Perfil</a>
                         {!!request()->routeIs('profile.show') ? $decoradorVertical : ""!!}
                     </div>
@@ -113,7 +117,7 @@
             </div>
         @else
             <div class="px-4 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-700">
-                <a href="{{ route('login') }}" class="text-gray-50 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-sm transition ease-in-out">Iniciar</a>
+                <a href="{{ route('posts.index') }}" class="text-gray-50 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-sm transition ease-in-out">Iniciar</a>
             </div>
         @endauth
     </div>

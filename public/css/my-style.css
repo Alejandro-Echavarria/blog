@@ -1,3 +1,11 @@
+body {
+    background-image: url('../img/background.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
 .color-primario {
     background-color: rgb(31,41,55);
     color: white;
@@ -163,6 +171,13 @@
 
 .personal-border {
     border: 1px solid rgb(219, 219, 219);
+}
+
+/* For devices 400px and larger: */
+@media only screen and (min-device-width: 540px) {
+    body {
+        background-image: url('../img/background-16.svg');
+    }
 }
 
 @media (max-width: 476px){

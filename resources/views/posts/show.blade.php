@@ -3,7 +3,7 @@
         <div class="container">
             <div class="p-2">
                 <h1 class="text-4xl font-bold text-gray-700">{{$post->name}}</h1>
-                <div class="text-lg text-gray-700 my-4 break-words font-semibold backdrop-blur-sm p-5 rounded-2xl border bg-white/20">
+                <div class="text-base sm:text-lg text-gray-700 my-4 break-words font-semibold backdrop-blur-sm p-5 rounded-2xl border bg-white/20 text-justify">
                     {!!$post->extract!!}
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 backdrop-blur-sm p-5 rounded-2xl border bg-white/20">
@@ -17,7 +17,7 @@
                                 <img class="w-full h-72 object-cover object-center rounded-lg" src="{{asset('img/img-ask.jpg')}}" alt="">
                             @endif
                         </figure>
-                        <div id="post-body" class="my-6 text-lg text-gray-700 break-words font-semibold">
+                        <div id="post-body" class="my-6 text-base sm:text-lg text-gray-700 break-words font-semibold text-justify">
                             {!! $post->body !!}
                         </div>
                     </div>

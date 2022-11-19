@@ -30,6 +30,7 @@
             <main>
                 {{ $slot }}
             </main>
+            <x-footers.footer />
         </div>
         @stack('modals')
         @livewireScripts

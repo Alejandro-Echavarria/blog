@@ -9,7 +9,7 @@
             <img class="w-full h-72 object-cover object-center" src="{{asset('img/img-ask.jpg')}}" alt="">
         @endif
     </a>
-    <div class="px-6 py-4 h-56 scrollCustom overflow-y-auto backdrop-blur-sm bg-white/20 rounded-2xl">
+    <div class="px-6 py-4 h-56 scrollCustom overflow-y-auto bg-white rounded-2xl">
         <a href="{{route('posts.show', $post)}}">
             <h4 class="font-bold text-xl text-gray-700 mb-4 break-words">
                 {{$post->name}}

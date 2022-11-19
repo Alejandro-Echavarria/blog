@@ -1,12 +1,12 @@
 <x-app-layout>
     <div class="py-6">
         <div class="container">
-            <div class="p-2">
+            <div class="sm:p-2">
                 <h1 class="text-4xl font-bold text-gray-700">{{$post->name}}</h1>
-                <div class="text-base sm:text-lg text-gray-700 my-4 break-words font-semibold backdrop-blur-sm p-5 rounded-2xl border bg-white/20 text-justify">
+                <div class="text-base sm:text-lg text-gray-700 my-4 break-words font-semibold p-5 rounded-2xl bg-white border text-justify">
                     {!!$post->extract!!}
                 </div>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 backdrop-blur-sm p-5 rounded-2xl border bg-white/20">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 p-5 rounded-2xl border bg-white">
                     {{-- Main content --}}
                     <div class="lg:col-span-2">
                         <figure>

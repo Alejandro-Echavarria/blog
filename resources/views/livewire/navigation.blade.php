@@ -194,8 +194,25 @@
                 </div>
             </div>
         @else
-            <div class="px-4 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-700">
-                <a href="{{ route('posts.index') }}" class="text-gray-50 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-sm transition ease-in-out">Inicio</a>
+            <div class="px-4 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200 dark:border-gray-700">
+                <a 
+                    href="{{ route('posts.index') }}" 
+                    class="
+                        text-gray-700 
+                        hover:bg-gray-200 
+                        hover:text-gray-900 
+                        dark:text-gray-200 
+                        dark:hover:text-white 
+                        dark:hover:bg-gray-700 
+                        block 
+                        px-3 
+                        py-2 
+                        rounded-md 
+                        text-sm
+                        font-bold
+                        transition 
+                        ease-in-out">Inicio
+                </a>
             </div>
         @endauth
     </div>

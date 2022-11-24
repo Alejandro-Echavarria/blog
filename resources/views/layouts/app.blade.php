@@ -4,11 +4,20 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
-        <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="#000000">
+        <script>
+            try {
+                if (localStorage.dark == 1 || (!('dark' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark')
+                    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000000')
+                } else {
+                    document.documentElement.classList.remove('dark')
+                }
+            } catch (_) {}
+        </script>
         <meta name="author" content="Manuel Echavarria">
         <title>{{ config('app.name', 'Blog') }}</title>
         <meta name="description" content="Blog personal."/>
+
         <link rel="shortcut icon" href="{{ asset('img/11.ico') }}">
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
@@ -23,17 +32,18 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
         <script src="{{ asset('js/post.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased bg-white dark:bg-gray-900">
         <x-jet-banner />
-        <div class="min-h-screen">
+        <div>
             @livewire('navigation')
             <!-- Page Content -->
-            <main>
+            <main class="min-h-screen">
                 {{ $slot }}
             </main>
             <x-footers.footer />
         </div>
         @stack('modals')
         @livewireScripts
+        <script src="{{ asset('js/generals_functions.js') }}"></script>
     </body>
 </html>

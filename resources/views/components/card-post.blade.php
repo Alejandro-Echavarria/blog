@@ -1,21 +1,21 @@
 @props(['post'])
 
-<article class="rounded-2xl overflow-hidden border">
+<article class="rounded-2xl overflow-hidden border dark:border-gray-800 dark:bg-gray-900">
     <a href="{{route('posts.show', $post)}}">
         @if ($post->image)
             
-            <img class="w-full h-72 object-cover object-center" src="{{Storage::url($post->image->url)}}" alt="">
+            <img class="w-full h-72 object-cover object-center" src="{{Storage::url($post->image->url)}}" alt="" loading="lazy">
         @else
-            <img class="w-full h-72 object-cover object-center" src="{{asset('img/img-ask.jpg')}}" alt="">
+            <img class="w-full h-72 object-cover object-center" src="{{asset('img/img-ask.jpg')}}" alt="" loading="lazy">
         @endif
     </a>
-    <div class="px-6 py-4 h-56 scrollCustom overflow-y-auto bg-white rounded-2xl">
+    <div class="px-6 py-4 h-56 scrollCustom overflow-y-auto rounded-2xl">
         <a href="{{route('posts.show', $post)}}">
-            <h4 class="font-bold text-xl text-gray-700 mb-4 break-words">
+            <h4 class="font-bold text-xl text-gray-700 dark:text-gray-200 mb-4 break-words">
                 {{$post->name}}
             </h4>
         </a>
-        <div class="text-gray-700 my-4 break-words text-base sm:text-lg">
+        <div class="text-gray-700 dark:text-gray-200 my-4 break-words text-base sm:text-lg">
             {!!$post->extract!!}
         </div>
         <div class="pb-4">

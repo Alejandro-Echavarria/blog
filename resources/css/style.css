@@ -57,7 +57,7 @@
 
     #post-body h1, h2, h3 {
         @apply text-2xl;
-        @apply text-gray-700
+        @apply text-gray-700 dark:text-gray-200
     }
 
     #post-body blockquote {

@@ -5,7 +5,7 @@
                 <x-filters-post :tags="$tags" :categories="$categories" />
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
                     @foreach ($posts as $post)
-                        <article class="w-full h-80 shadow overflow-auto bg-cover bg-center rounded-2xl @if($loop->first) md:col-span-2 @endif" style="background-image: url(@if($post->image) {{Storage::url($post->image->url)}} @else {{asset('img/img-ask.jpg')}} @endif)">
+                        <article class="w-full h-80 overflow-auto bg-cover bg-center rounded-2xl @if($loop->first) md:col-span-2 @endif" style="background-image: url(@if($post->image) {{Storage::url($post->image->url)}} @else {{asset('img/img-ask.jpg')}} @endif)">
                             <div class="w-full h-full px-8 flex flex-col justify-center">
                                 <div class="backdrop-blur-sm bg-slate-800/50 px-3 py-1 rounded-lg">
                                     <h1 class="text-3xl text-white font-bold">

@@ -32,7 +32,7 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
         <script src="{{ asset('js/post.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased bg-white dark:bg-gray-900">
+    <body class="font-sans antialiased dark:bg-black/90">
         <x-jet-banner />
         <div>
             @livewire('navigation')

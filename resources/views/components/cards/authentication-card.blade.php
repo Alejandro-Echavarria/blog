@@ -1,4 +1,4 @@
-<section class="dark:bg-gray-900">
+<section>
     <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
         <div class="mb-6 md:mb-0">
             <a href="/" class="flex-shrink-0">

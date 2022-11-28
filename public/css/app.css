@@ -2393,6 +2393,9 @@ select {
 .dark .dark\:border-red-400\/60 {
   border-color: rgb(248 113 113 / 0.6);
 }
+.dark .dark\:bg-black\/90 {
+  background-color: rgb(0 0 0 / 0.9);
+}
 .dark .dark\:bg-black\/80 {
   background-color: rgb(0 0 0 / 0.8);
 }
@@ -2408,30 +2411,12 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
-.dark .dark\:bg-slate-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(51 65 85 / var(--tw-bg-opacity));
-}
-.dark .dark\:bg-slate-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
-}
-.dark .dark\:bg-slate-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
-}
-.dark .dark\:bg-gray-900\/80 {
-  background-color: rgb(17 24 39 / 0.8);
-}
 .dark .dark\:bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
-.dark .dark\:bg-black\/60 {
-  background-color: rgb(0 0 0 / 0.6);
-}
-.dark .dark\:bg-black\/90 {
-  background-color: rgb(0 0 0 / 0.9);
+.dark .dark\:bg-gray-800\/20 {
+  background-color: rgb(31 41 55 / 0.2);
 }
 .dark .dark\:text-gray-200 {
   --tw-text-opacity: 1;

@@ -10,7 +10,7 @@
         <h3 class="text-2xl text-gray-700 dark:text-gray-200 font-bold">Filtrar</h3>
     </div>
     <!-- Content -->
-    <div class="border dark:border-gray-800 rounded-2xl">
+    <div class="border dark:border-black/50 rounded-2xl">
         <div class="accordion-content px-5 pt-0 max-h-0 overflow-auto">
             <div>
                 <div class="items-baseline space-x-4 py-5">

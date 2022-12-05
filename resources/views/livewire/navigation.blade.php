@@ -5,7 +5,7 @@
 
 <nav
     x-data="{ open: false, show: localStorage.dark == 1 ? true: false, toggle() { this.show = !this.show } }"
-    class="backdrop-blur-md bg-white/80 dark:bg-transparent navSticky z-50 sticky top-0" x-data="{ open: false }">
+    class="backdrop-blur-md bg-white/80 dark:bg-[#333333]/80 navSticky z-50 sticky top-0" x-data="{ open: false }">
     <div class="max-w-full mx-auto px-6 sm:px-6 lg:px-6 xl:px-8 2xl:px-16">
         <div class="flex items-center h-16">
             {{-- logotipo --}}

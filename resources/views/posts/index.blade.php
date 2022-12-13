@@ -26,7 +26,7 @@
                     @endforeach
                 </div>
                 {{-- Pagination --}}
-                <div class="sm:px-4 mt-8">
+                <div class="mt-8">
                     {{$posts->links()}}
                 </div>
             </div>

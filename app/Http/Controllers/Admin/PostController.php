@@ -8,6 +8,8 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Str;
 
 // Import of validation file
 use App\Http\Requests\PostRequest;
@@ -37,21 +39,27 @@ class PostController extends Controller
 
     public function store(PostRequest $request)
     {
-
         $data = $request->all();
-        // $data['user_id'] = auth()->user()->id;
 
         $post = Post::create($data);
 
         // Validamos si existe una imagen en la petición
         if ($request->file('file')) {
             
-            $url = Storage::put('posts', $request->file('file'));
+            $name = Str::random(10) . $request->file('file')->getClientOriginalName();
+            $path = storage_path() . '\app\public\posts/' . $name;
+            $pathRelative = 'posts/' . $name;
+
+            $img = Image::make($request->file('file'))
+                ->resize(1200, null, function($constraint) {
+                    $constraint->aspectRatio();
+                })
+                ->save($path);
 
             // Guardamos el archivo
                 // Llamamos la relacion de post e image
             $post->image()->create([
-                'url' => $url
+                'url' => $pathRelative
             ]);
         }
 
@@ -87,7 +95,16 @@ class PostController extends Controller
         // Validamos si existe una imagen en la petición
         if ($request->file('file')) {
             
-            $url = Storage::put('posts', $request->file('file'));
+            $name = Str::random(10) . $request->file('file')->getClientOriginalName();
+            $path = storage_path() . '\app\public\posts/' . $name;
+            $pathRelative = 'posts/' . $name;
+
+            $img = Image::make($request->file('file'))
+                ->resize(1200, null, function($constraint) {
+                    $constraint->aspectRatio();
+                })
+                ->save($path);
+            // $url = Storage::put('posts', $request->file('file'));
 
             // Indicamos que si existe una imagen la eliminemos
             if ($post->image) {
@@ -96,11 +113,11 @@ class PostController extends Controller
                 
                 // Editamos el archivo
                 $post->image->update([
-                    'url' => $url
+                    'url' => $pathRelative
                 ]);
             }else{// En el caso de no existir una imagen asociada
                 $post->image()->create([
-                    'url' => $url
+                    'url' => $pathRelative
                 ]);
             }
         }

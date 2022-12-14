@@ -96,6 +96,15 @@
 </div>
 
 <div class="form-group">
+    {!! Form::label('alt', 'Alt para la imagen') !!}
+    {!! Form::text('alt', null, ['class' => 'form-control bg-transparent', 'placeholder' => 'Alt para la imagen']) !!}
+
+    @error('alt')
+        <small class="text-danger">{{$message}}</small>
+    @enderror
+</div>
+
+<div class="form-group">
     {!! Form::label('extract', 'Extracto') !!}
     {!! Form::textarea('extract', null, ['class' => 'form-control']) !!}
     

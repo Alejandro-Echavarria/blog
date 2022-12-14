@@ -1,16 +1,16 @@
 @props(['categories', 'tags'])
 
 @php
-    $decorador = '<div class="absolute w-6 m-auto  inset-x-0 bottom-0"><div class="border-b-4 border-color-secundario rounded-md"></div></div>';
+    $decorador = '<div class="absolute w-6 m-auto  inset-x-0 bottom-0"><div class="border-b-4 border-gray-700 dark:border-gray-200 rounded-md"></div></div>';
 @endphp
 
 <div class="mb-8">
-    <div class="accordion-header cursor-pointer transition flex space-x-5 items-center h-16 w-32">
-        <i class="fas fa-plus iconos-color-secundario"></i>
-        <h3 class="text-2xl text-gray-700 dark:text-gray-200 font-bold">Filtrar</h3>
+    <div class="accordion-header cursor-pointer transition flex space-x-2 items-center h-16 w-32">
+        <i class="fas fa-plus text-gray-700 dark:text-gray-200"></i>
+        <h3 class="text-xl text-gray-700 dark:text-gray-200 font-bold">Filtrar</h3>
     </div>
     <!-- Content -->
-    <div class="border dark:border-black/50 rounded-2xl">
+    <div class="border-2 border-gray-200/60 rounded-2xl">
         <div class="accordion-content px-5 pt-0 max-h-0 overflow-auto">
             <div>
                 <div class="items-baseline space-x-4 py-5">
@@ -18,7 +18,7 @@
                         <div class="">
                             <h3 class="px-3 text-gray-700 dark:text-gray-200 font-bold">Categor&iacute;as</h3>
                             <div class="mx-3 py-3">
-                                <div class="border-b-4 border-slate-200 rounded-md"></div>
+                                <div class="border-b-4 border-gray-200/60 rounded-md"></div>
                             </div>
                             <div class="flex flex-wrap">
                                 @foreach ($categories as $category)
@@ -36,7 +36,7 @@
                         <div class="">
                             <h3 class="px-3 text-gray-700 dark:text-gray-200 font-bold">Etiquetas</h3>
                             <div class="mx-3 py-3">
-                                <div class="border-b-4 border-slate-200 rounded-md"></div>
+                                <div class="border-b-4 border-gray-200/60 rounded-md"></div>
                             </div>
                             <div class="flex flex-wrap">
                                 @foreach ($tags as $tag)

@@ -11,10 +11,9 @@
                     <div class="lg:col-span-2">
                         <figure class="mb-8">
                             @if ($post->image)
-                
-                                <img class="w-full h-72 object-cover object-center rounded-2xl" src="{{Storage::url($post->image->url)}}" alt="">
+                                <img class="w-full h-80 object-cover object-center rounded-2xl" src="{{Storage::url($post->image->url)}}" alt="{{ $post->alt }}">
                             @else
-                                <img class="w-full h-72 object-cover object-center rounded-2xl" src="{{asset('img/img-ask.jpg')}}" alt="">
+                                <img class="w-full h-80 object-cover object-center rounded-2xl" src="{{asset('img/img-ask.jpg')}}" alt="{{ $post->alt }}">
                             @endif
                         </figure>
                         <div id="post-body" class="my-6 text-base sm:text-lg text-gray-700 dark:text-gray-200 break-words">
@@ -30,9 +29,9 @@
                                     <a class="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-2" href="{{route('posts.show', $similar)}}">
                                         <div class="w-30">
                                             @if ($similar->image)
-                                                <img class="rounded-2xl w-full h-20 object-cover object-center" src="{{Storage::url($similar->image->url)}}" alt="">
+                                                <img class="rounded-2xl w-full h-36 md:h-52 lg:h-20 object-cover object-center" src="{{Storage::url($similar->image->url)}}" alt="{{ $similar->alt }}">
                                             @else
-                                                <img class="rounded-2xl w-30 h-20 object-cover object-center" src="{{asset('img/img-ask.jpg')}}" alt="">
+                                                <img class="rounded-2xl w-full h-36 md:h-52 lg:h-20 object-cover object-center" src="{{asset('img/img-ask.jpg')}}" alt="{{ $similar->alt }}">
                                             @endif
                                         </div>
                                         <span class="ml-2 text-gray-700 dark:text-gray-200 font-bold">{{$similar->name}}</span>

@@ -1,6 +1,6 @@
 @php
-    $decorador = '<div class="absolute w-6 m-auto inset-x-0 bottom-0 top-7"><div class="border-b-4 border-color-secundario rounded-md"></div></div>';
-    $decoradorVertical = '<div class="absolute inset-y-0 top-3"><div class="h-6 border-l-4 border-color-secundario rounded-md"></div></div>';
+    $decorador = '<div class="absolute w-6 m-auto inset-x-0 bottom-0 top-7"><div class="border-b-4 border-gray-700 dark:border-gray-200  rounded-md"></div></div>';
+    $decoradorVertical = '<div class="absolute inset-y-0 top-3"><div class="h-6 border-l-4 border-gray-700 dark:border-gray-200 rounded-md"></div></div>';
 @endphp
 
 <nav

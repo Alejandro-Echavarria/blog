@@ -4,9 +4,9 @@
     <a href="{{route('posts.show', $post)}}">
         @if ($post->image)
             
-            <img class="w-full h-72 object-cover object-center" src="{{Storage::url($post->image->url)}}" alt="" loading="lazy">
+            <img class="w-full h-72 object-cover object-center" src="{{Storage::url($post->image->url)}}" alt="{{ $post->alt }}">
         @else
-            <img class="w-full h-72 object-cover object-center" src="{{asset('img/img-ask.jpg')}}" alt="" loading="lazy">
+            <img class="w-full h-72 object-cover object-center" src="{{asset('img/img-ask.jpg')}}" alt="{{ $post->alt }}">
         @endif
     </a>
     <div class="px-6 py-4 h-56 scrollCustom overflow-y-auto rounded-2xl">

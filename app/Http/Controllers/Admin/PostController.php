@@ -47,8 +47,10 @@ class PostController extends Controller
         if ($request->file('file')) {
             
             $name = Str::random(10) . $request->file('file')->getClientOriginalName();
-            $path = storage_path() . '\app\public\posts/' . $name;
+            $path = storage_path('app/public/posts/' . $name);
             $pathRelative = 'posts/' . $name;
+
+            Storage::makeDirectory('posts');
 
             $img = Image::make($request->file('file'))
                 ->resize(1200, null, function($constraint) {
@@ -96,15 +98,16 @@ class PostController extends Controller
         if ($request->file('file')) {
             
             $name = Str::random(10) . $request->file('file')->getClientOriginalName();
-            $path = storage_path() . '\app\public\posts/' . $name;
+            $path = storage_path('app/public/posts/' . $name);
             $pathRelative = 'posts/' . $name;
+
+            Storage::makeDirectory('posts');
 
             $img = Image::make($request->file('file'))
                 ->resize(1200, null, function($constraint) {
                     $constraint->aspectRatio();
                 })
                 ->save($path);
-            // $url = Storage::put('posts', $request->file('file'));
 
             // Indicamos que si existe una imagen la eliminemos
             if ($post->image) {

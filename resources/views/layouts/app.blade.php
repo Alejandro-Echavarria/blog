@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="dark" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -32,7 +32,7 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
         <script src="{{ asset('js/post.js') }}" defer></script>
     </head>
-    <body class="font-sans antialiased dark:bg-black/80">
+    <body class="font-sans antialiased dark:bg-[#333333]">
         <x-jet-banner />
         <div>
             @livewire('navigation')

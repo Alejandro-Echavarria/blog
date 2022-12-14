@@ -106,6 +106,10 @@
     width: 5px;
 } */
 
+.dark {
+    color-scheme: dark;
+}
+
 .hoverArticle {
     transition: all 0.2s ease-out;
     -webkit-transition: all 0.2s ease-out;

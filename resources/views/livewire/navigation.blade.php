@@ -112,7 +112,7 @@
     <!-- Mobile menu, show/hide based on menu state. -->
     <div class="md:hidden" id="mobile-menu" x-show="open" x-on:click.away="open = false" style="display: none;" x-transition:enter.duration.400ms x-transition:leave.duration.200ms>
         @auth
-            <div class="pt-4 pb-3 border-t border-gray-200 dark:border-gray-700">
+            <div class="px-3 py-3 border-t space-y-1 sm:px-3 dark:border-gray-600">
                 <div class="flex items-center px-4">
                     <div class="flex-shrink-0">
                         <img class="h-10 w-10 rounded-full"
@@ -129,12 +129,10 @@
                         <a 
                             href="{{ route('posts.index') }}" 
                             class="
-                                text-gray-700 
-                                hover:bg-gray-200 
+                                text-gray-700  
                                 hover:text-gray-900 
                                 dark:text-gray-200 
                                 dark:hover:text-white 
-                                dark:hover:bg-gray-700 
                                 block 
                                 px-3 
                                 py-2 
@@ -150,11 +148,9 @@
                             href="{{ route('admin.home') }}" 
                             class="
                                 text-gray-700 
-                                hover:bg-gray-200 
                                 hover:text-gray-900 
                                 dark:text-gray-200 
                                 dark:hover:text-white 
-                                dark:hover:bg-gray-700 
                                 block 
                                 px-3 
                                 py-2 
@@ -167,12 +163,10 @@
                         <a 
                             href="{{ route('profile.show') }}" 
                             class="
-                                text-gray-700 
-                                hover:bg-gray-200 
+                                text-gray-700
                                 hover:text-gray-900 
                                 dark:text-gray-200 
                                 dark:hover:text-white 
-                                dark:hover:bg-gray-700 
                                 block 
                                 px-3 
                                 py-2 
@@ -210,25 +204,26 @@
                 </div>
             </div>
         @else
-            <div class="px-4 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200 dark:border-gray-700">
-                <a 
-                    href="{{ route('posts.index') }}" 
-                    class="
-                        text-gray-700 
-                        hover:bg-gray-200 
-                        hover:text-gray-900 
-                        dark:text-gray-200 
-                        dark:hover:text-white 
-                        dark:hover:bg-gray-700 
-                        block 
-                        px-3 
-                        py-2 
-                        rounded-md 
-                        text-sm
-                        font-bold
-                        transition 
-                        ease-in-out">Inicio
-                </a>
+            <div class="px-3 pt-2 pb-3 border-t space-y-1 sm:px-3 dark:border-gray-600">
+                <div class="px-4 pt-2 space-y-1 relative">
+                    <a 
+                        href="{{ route('posts.index') }}" 
+                        class="
+                            text-gray-700 
+                            hover:text-gray-900 
+                            dark:text-gray-200 
+                            dark:hover:text-white 
+                            block 
+                            px-3 
+                            py-2 
+                            rounded-md 
+                            text-sm
+                            font-bold
+                            transition 
+                            ease-in-out">Inicio
+                    </a>
+                    {!!request()->routeIs('posts.index') ? $decoradorVertical : ""!!}
+                </div>
             </div>
         @endauth
     </div>

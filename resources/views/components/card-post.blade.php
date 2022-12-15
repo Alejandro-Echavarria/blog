@@ -1,6 +1,6 @@
 @props(['post'])
 
-<article class="rounded-2xl overflow-hidden border dark:border-black/50">
+<article class="rounded-2xl overflow-hidden border-2 dark:border-gray-600">
     <a href="{{route('posts.show', $post)}}">
         @if ($post->image)
             

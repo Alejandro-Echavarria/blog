@@ -12,7 +12,7 @@
             <a href="/" class="flex-shrink-0">
                 <div class="flex items-center">
                     <div class="items-center">
-                        <p class="font-extrabold text-gray-700 dark:text-gray-200"><span class="h-12 w-12">MAET</span> - Blog</p>
+                        <p class="font-extrabold text-gray-700 dark:text-gray-200"><span class="h-12 w-12">MAET</span> / Blog</p>
                     </div>
                 </div>
             </a>

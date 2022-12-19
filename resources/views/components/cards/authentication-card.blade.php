@@ -5,7 +5,7 @@
                 {{ $logo }}
             </a>
         </div>
-        <div class="w-full md:mt-0 sm:max-w-md rounded-2xl border dark:border-black/50">
+        <div class="w-full md:mt-0 sm:max-w-md rounded-2xl border-2 dark:border-gray-600">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                 <div class="text-center">
                     <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-700 md:text-2xl dark:text-gray-200">

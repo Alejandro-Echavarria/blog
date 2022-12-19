@@ -57,7 +57,7 @@
                         {{ __('login.Forgot your password?') }}
                     </a>
                 @endif --}}
-                <button class="ml-4 px-5 py-2.5 text-gray-700 dark:text-gray-200 focus:outline-none hover:text-gray-900 dark:hover:text-white rounded-2xl text-sm w-auto text-center bg-gray-200 dark:bg-gray-700 font-semibold cursor-pointer transition ease-in-out">
+                <button class="ml-4 px-5 py-2.5 text-gray-700 dark:text-gray-200 focus:outline-none hover:text-gray-900 dark:hover:text-white rounded-2xl text-sm w-auto text-center bg-gray-300/20 hover:bg-gray-300/50 font-semibold cursor-pointer transition ease-in-out">
                     {{ __('login.Log in') }}
                 </button>
             </div>

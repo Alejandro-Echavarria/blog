@@ -29,6 +29,29 @@
 
 @section('js')
     <script src="{{asset('/vendor/jQuery-Plugin-stringToSlug-1.3/jquery.stringToSlug.min.js')}}"></script>
-    <script src="{{asset('/vendor/ckeditor-clasic/build/ckeditor.js')}}"></script>
+    <script src="{{asset('/vendor/ckeditor5-build-classic/build/ckeditor.js')}}"></script>
     <script src="{{asset('/js/functions-post.js')}}"></script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#extract' ), {
+                simpleUpload: {
+                    // The URL that the images are uploaded to.
+                    uploadUrl: "{{ route('image.upload') }}"
+                }
+            })
+            .catch( error => {
+                console.error( error );
+            } );
+
+        ClassicEditor
+            .create( document.querySelector( '#body'), {
+                simpleUpload: {
+                    // The URL that the images are uploaded to.
+                    uploadUrl: "{{ route('image.upload') }}"
+                }
+            })
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
 @stop

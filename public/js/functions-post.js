@@ -26,15 +26,3 @@ function cambiarImagen(event){
 
     reader.readAsDataURL(file);
 }
-
-ClassicEditor
-    .create( document.querySelector( '#extract' ) )
-    .catch( error => {
-        console.error( error );
-    } );
-
-ClassicEditor
-    .create( document.querySelector( '#body' ) )
-    .catch( error => {
-        console.error( error );
-    } );

@@ -65,4 +65,9 @@
         @apply pl-3;
         @apply italic;
     }
+
+    #post-body a {
+
+        @apply text-blue-700 dark:text-blue-400 underline underline-offset-2;
+    }
 }

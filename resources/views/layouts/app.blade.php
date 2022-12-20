@@ -45,5 +45,6 @@
         @stack('modals')
         @livewireScripts
         <script src="{{ asset('js/generals_functions.js') }}"></script>
+        @yield('js')
     </body>
 </html>

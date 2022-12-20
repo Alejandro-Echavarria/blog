@@ -16,6 +16,25 @@
                                 <img class="w-full h-80 object-cover object-center rounded-2xl" src="{{asset('img/img-ask.jpg')}}" alt="{{ $post->alt }}">
                             @endif
                         </figure>
+                        <div>
+                            <small class="font-semibold text-gray-500 dark:text-gray-400"><span>Author</span></small>
+                            <div class="flex justify-between place-items-center mt-3 space-x-4">
+                                <div class="flex space-x-4">
+                                    <img class="h-[32px] w-[32px] rounded-full"
+                                        src="{{ $post->user->profile_photo_url }}"
+                                        alt="{{ $post->user->name }}">
+                                    <div class="m-auto">
+                                        <h3 class="text-sm font-bold text-gray-700 dark:text-gray-200">{{ $post->user->name }}</h3>
+                                    </div>
+                                </div>
+                                <div class="justify-end">
+                                    <small class="font-semibold text-gray-500 dark:text-gray-400">
+                                        <p class="text-left"><time>{{ $post->created_at->format("m-d-Y") }}</time></p>
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-6 border-t-2 sm:mx-auto dark:border-gray-600"/>
                         <div id="post-body" class="my-6 text-base sm:text-lg text-gray-700 dark:text-gray-200 break-words">
                             {!! $post->body !!}
                         </div>
@@ -44,15 +63,16 @@
             </div>
         </div>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const tableRemove = document.querySelector("figure.table");
-
-            if (tableRemove) {
-                
-                tableRemove.classList.remove('table');
-            }
-        });
-    </script>
+    @section('js')    
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const tableRemove = document.querySelector("figure.table");
+    
+                if (tableRemove) {
+                    
+                    tableRemove.classList.remove('table');
+                }
+            });
+        </script>
+    @endsection
 </x-app-layout>

@@ -46,7 +46,7 @@ class PostController extends Controller
         // Validamos si existe una imagen en la petición
         if ($request->file('file')) {
             
-            $name = Str::random(10) . $request->file('file')->getClientOriginalName();
+            $name = str_replace(" ", "", Str::random(10) . $request->file('file')->getClientOriginalName());
             $path = storage_path('app/public/posts/' . $name);
             $pathRelative = 'posts/' . $name;
 
@@ -97,7 +97,7 @@ class PostController extends Controller
         // Validamos si existe una imagen en la petición
         if ($request->file('file')) {
             
-            $name = Str::random(10) . $request->file('file')->getClientOriginalName();
+            $name = str_replace(" ", "", Str::random(10) . $request->file('file')->getClientOriginalName());
             $path = storage_path('app/public/posts/' . $name);
             $pathRelative = 'posts/' . $name;
 

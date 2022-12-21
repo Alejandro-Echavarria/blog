@@ -39,4 +39,9 @@ class Post extends Model
         return $this->morphOne(Image::class, 'imageable');
     }
 
+    // Relacion una a muchos
+    public function body_images()
+    {
+        return $this->hasMany(BodyImage::class);
+    }
 }

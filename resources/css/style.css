@@ -70,4 +70,9 @@
 
         @apply text-blue-700 dark:text-blue-400 underline underline-offset-2;
     }
+
+    #post-body img {
+
+        @apply my-2 w-full object-cover object-center rounded-2xl;
+    }
 }

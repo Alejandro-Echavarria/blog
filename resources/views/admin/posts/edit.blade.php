@@ -33,12 +33,7 @@
     <script src="{{asset('/js/functions-post.js')}}"></script>
     <script>
         ClassicEditor
-            .create( document.querySelector( '#extract' ), {
-                simpleUpload: {
-                    // The URL that the images are uploaded to.
-                    uploadUrl: "{{ route('image.upload') }}"
-                }
-            })
+            .create( document.querySelector( '#extract') )
             .catch( error => {
                 console.error( error );
             } );

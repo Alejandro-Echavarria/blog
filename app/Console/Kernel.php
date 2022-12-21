@@ -4,6 +4,8 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\Storage;
+use App\Models\BodyImage;
 
 class Kernel extends ConsoleKernel
 {
@@ -15,7 +17,13 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->call(function () {
+
+            $files  = Storage::files('ckeditor/images');
+            $images = BodyImage::pluck('image_url')->toArray();
+        
+            Storage::delete(array_diff($files, $images));
+        })->daily();
     }
 
     /**

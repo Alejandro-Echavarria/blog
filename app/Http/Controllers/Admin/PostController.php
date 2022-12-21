@@ -40,10 +40,22 @@ class PostController extends Controller
     public function store(PostRequest $request)
     {
         $data = $request->all();
-
         $post = Post::create($data);
 
-        // Validamos si existe una imagen en la petición
+        /* Extracting the images url from the body of the post. */
+        $re_extractImages = '/src=["\']([^ ^"^\']*)["\']/ims';
+        preg_match_all($re_extractImages, $data['body'], $matches);
+        $images = $matches[1];
+
+        foreach ($images as $image) {
+            
+            $image_url = 'ckeditor/images/' . pathinfo($image, PATHINFO_BASENAME);
+
+            $post->body_images()->create([
+                'image_url' => $image_url
+            ]);
+        }
+
         if ($request->file('file')) {
             
             $name = str_replace(" ", "", Str::random(10) . $request->file('file')->getClientOriginalName());
@@ -65,10 +77,9 @@ class PostController extends Controller
             ]);
         }
 
-        // Validamos si existe tags en la petición
         if ($request->tags) {
             
-            /* Llamamos a la relaci►2n tags y le pasamos el metodo attach
+            /* Llamamos a la relación tags y le pasamos el metodo attach
                 pasandole los tags de la variable o objeto request
             */
             $post->tags()->attach($request->tags);
@@ -80,6 +91,7 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
+        /* A middleware that checks if the user is the author of the post. */
         $this->authorize('author', $post);
 
         $categories = Category::pluck('name', 'id');
@@ -90,11 +102,41 @@ class PostController extends Controller
 
     public function update(PostRequest $request, Post $post)
     {
+        /* A middleware that checks if the user is the author of the post. */
         $this->authorize('author', $post);
-
-        $post->update($request->all());
         
-        // Validamos si existe una imagen en la petición
+        $post->update($request->all());
+
+        $oldImages = $post->body_images()->pluck('image_url')->toArray();
+
+        /* Extracting the images url from the body of the post. */
+        $re_extractImages = '/src=["\']([^ ^"^\']*)["\']/ims';
+        preg_match_all($re_extractImages, $request['body'], $matches);
+        $newImages = $matches[1];
+
+        foreach ($newImages as $newImage) {
+            
+            $image_url = 'ckeditor/images/' . pathinfo($newImage, PATHINFO_BASENAME);
+
+            $key = array_search($image_url, $oldImages);
+
+            if ($key === false) {
+                
+                $post->body_images()->create([
+                    'image_url' => $image_url
+                ]);
+            }else{
+                unset($oldImages[$key]);
+            }
+
+        }
+
+        foreach ($oldImages as $oldImage) {
+            
+            Storage::delete($oldImage);
+            $post->body_images()->where('image_url', $oldImage)->delete();
+        }
+        
         if ($request->file('file')) {
             
             $name = str_replace(" ", "", Str::random(10) . $request->file('file')->getClientOriginalName());

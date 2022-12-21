@@ -27,7 +27,7 @@ class PostRequest extends FormRequest
         $post = $this->route()->parameter('post');
 
         $rules = [
-            'name' => 'required',
+            'name' => 'required|max:255',
             'slug' => 'required|unique:posts',
             'status' => 'required|in:1,2',
             'file' => 'image'
@@ -45,9 +45,10 @@ class PostRequest extends FormRequest
             
             $rules = array_merge($rules, [
                 'category_id' => 'required',
-                'tags' => 'required',
-                'extract' => 'required',
-                'body' => 'required'
+                'tags'        => 'required',
+                'alt'         => 'required',
+                'extract'     => 'required',
+                'body'        => 'required'
             ]);
         }
 

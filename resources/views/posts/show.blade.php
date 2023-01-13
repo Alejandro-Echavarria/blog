@@ -1,9 +1,12 @@
 <x-app-layout>
+    @section('css')
+        <link rel="stylesheet" href="{{ asset('vendor/prismjs/prism.css') }}">
+    @endsection
     <div class="py-6">
         <div class="container">
             <div class="p-2">
                 <h1 class="text-4xl font-bold text-gray-700 dark:text-gray-200">{{$post->name}}</h1>
-                <div class="text-base sm:text-lg text-gray-700 dark:text-gray-200 my-8 break-words">
+                <div id="post-extract" class="text-base sm:text-lg text-gray-700 dark:text-gray-200 my-8 break-words">
                     {!!$post->extract!!}
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
@@ -63,7 +66,8 @@
             </div>
         </div>
     </div>
-    @section('js')    
+    @section('js')
+        <script src="{{ asset('vendor/prismjs/prism.js') }}"></script>
         <script>
             document.addEventListener("DOMContentLoaded", () => {
                 const tableRemove = document.querySelector("figure.table");

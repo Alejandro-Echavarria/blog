@@ -67,12 +67,43 @@
     }
 
     #post-body a {
-
         @apply text-blue-700 dark:text-blue-400 underline underline-offset-2;
     }
 
     #post-body img {
-
         @apply my-2 w-full object-cover object-center rounded-2xl;
+    }
+
+    #post-body pre {
+        @apply rounded-2xl;
+    }
+
+    /* Estilos para los extract */
+
+    #post-extract pre {
+        @apply rounded-2xl;
+    }
+
+    #post-extract h1, h2, h3 {
+        @apply text-2xl;
+        @apply text-gray-700 dark:text-gray-200
+    }
+
+    #post-extract a {
+        @apply text-blue-700 dark:text-blue-400 underline underline-offset-2;
+    }
+
+    #post-extract blockquote {
+        @apply border-l-2;
+        @apply pl-3;
+        @apply italic;
+    }
+    
+    #post-extract ul {
+        @apply pl-14;
+    }
+
+    #post-extract ol {
+        @apply pl-14;
     }
 }

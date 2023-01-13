@@ -27,6 +27,7 @@
         <link rel="stylesheet" href="{{ asset('css/my-style.css') }}">
         {{-- Font awesome --}}
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
+        @yield('css')
         @livewireStyles
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>

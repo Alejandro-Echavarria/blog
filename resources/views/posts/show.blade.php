@@ -1,4 +1,10 @@
 <x-app-layout>
+    @section('title')
+        {{ $post->name }}
+    @endsection
+    @section('meta-description')
+        {{ rtrim(ltrim($post->extract, '<p><i><strong>'), '</strong></i></p>'); }}
+    @endsection
     @section('css')
         <link rel="stylesheet" href="{{ asset('vendor/prismjs/prism.css') }}">
     @endsection

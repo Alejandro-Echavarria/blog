@@ -15,8 +15,12 @@
             } catch (_) {}
         </script>
         <meta name="author" content="Manuel Echavarria">
-        <title>{{ config('app.name', 'Blog') }}</title>
-        <meta name="description" content="Blog personal."/>
+        <title>
+            @yield('title', 'MAET')
+            -
+            {{ config('app.name', 'Blog') }}
+        </title>
+        <meta name="description" content="@yield('meta-description', 'MAET - Blog personal. Este es un espacio donde comparto mis conocimientos y experiencias en el campo del desarrollo web.')"/>
 
         <link rel="shortcut icon" href="{{ asset('img/11.ico') }}">
         <!-- Fonts -->

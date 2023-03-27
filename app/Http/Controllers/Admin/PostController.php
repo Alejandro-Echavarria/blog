@@ -65,7 +65,7 @@ class PostController extends Controller
             Storage::makeDirectory('posts');
 
             $img = Image::make($request->file('file'))
-                ->resize(1200, null, function($constraint) {
+                ->resize(1200, 800, function($constraint) {
                     $constraint->aspectRatio();
                 })
                 ->save($path);

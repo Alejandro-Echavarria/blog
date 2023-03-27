@@ -20,7 +20,7 @@ class ImageController extends Controller
         $pathRelative = 'ckeditor/images/' . $name;
 
         $img = Image::make($request->file('upload'))
-                ->resize(1200, null, function($constraint) {
+                ->resize(1200, 800, function($constraint) {
                     $constraint->aspectRatio();
                 })
                 ->save($path);
